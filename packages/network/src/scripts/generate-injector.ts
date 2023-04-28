@@ -13,10 +13,10 @@ const template = (
 ) => `// file is auto generated; do not edit
 const data = ${jsonStr};
 
-window.${callbackName} = () => {
+window.${callbackName} = () => ({
   version: "v0",
   v0: data
-}
+});
 `;
 
 const main = async () => {
