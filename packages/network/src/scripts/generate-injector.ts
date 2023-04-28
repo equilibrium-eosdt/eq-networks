@@ -20,8 +20,7 @@ window.${callbackName} = () => ({
 `;
 
 const main = async () => {
-  const outDir = process.env.OUT_DIT || path.join(process.cwd());
-
+  const outDir = process.env.OUT_DIR || path.join(process.cwd());
   console.log({ outDir });
 
   await fs.writeFile(

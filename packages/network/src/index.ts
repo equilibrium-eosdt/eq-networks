@@ -47,6 +47,7 @@ export const injectTypes = (url: string, callbackName: string) => {
   }, 100);
 
   const script = document.createElement("script");
+  script.type = "text/javascript";
   script.async = true;
   script.src = url;
   document.body.appendChild(script);

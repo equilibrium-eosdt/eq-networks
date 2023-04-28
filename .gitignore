@@ -8,3 +8,4 @@ sme-result.html
 package-lock.json
 tmp
 *.tmp
+*.tsbuildinfo

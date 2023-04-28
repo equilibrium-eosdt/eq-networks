@@ -5,8 +5,10 @@
   "license": "none",
   "private": false,
   "scripts": {
-    "build": "tsc",
-    "generate": "node ./dist/scripts/generate-injector.js"
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo && mkdir ./dist && touch ./dist/.gitkeep",
+    "build": "yarn clean && tsc",
+    "generate": "node ./dist/scripts/generate-injector.js",
+    "postversion": "./bin/postversion.sh"
   },
   "devDependencies": {
     "@types/node": "^18.16.2",

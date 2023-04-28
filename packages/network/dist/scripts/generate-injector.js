@@ -49,14 +49,15 @@ var substrate_chain_1 = __importDefault(require("../data/substrate-chain"));
 var token_crosschain_1 = __importDefault(require("../data/token-crosschain"));
 var template = function (jsonStr, callbackName) {
     if (callbackName === void 0) { callbackName = "_networkInjectorCallback"; }
-    return "// file is auto generated; do not edit\nconst data = ".concat(jsonStr, ";\n\nwindow.").concat(callbackName, " = () => {\n  version: \"v0\",\n  v0: data\n}\n");
+    return "// file is auto generated; do not edit\nconst data = ".concat(jsonStr, ";\n\nwindow.").concat(callbackName, " = () => ({\n  version: \"v0\",\n  v0: data\n});\n");
 };
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
     var outDir;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                outDir = process.env.OUT_DIT || path_1.default.join(process.cwd());
+                console.log(process.env);
+                outDir = process.env.OUT_DIR || path_1.default.join(process.cwd());
                 console.log({ outDir: outDir });
                 return [4 /*yield*/, promises_1.default.writeFile(path_1.default.join(outDir, "injector.js"), template(JSON.stringify({
                         "evm-chain": evm_chain_1.default,

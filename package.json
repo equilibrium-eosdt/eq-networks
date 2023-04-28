@@ -7,9 +7,10 @@
   "license": "none",
   "private": true,
   "scripts": {
+    "clean:generated": "rm -rf docs && mkdir docs && touch docs/.gitkeep",
     "clean:node_modules": "rm -rf node_modules && rm -rf packages/*/node_modules && rm -f yarn.lock",
     "fix:versions": "node scripts/version.js",
-    "generate:injector": "yarn workspace @equilab/network build && yarn workspace @equilab/network generate",
+    "generate:injector": "yarn clean:generated && OUT_DIR=`pwd`/docs yarn workspace @equilab/network build && sleep 2 && yarn workspace @equilab/network generate",
     "lint:ci": "yarn workspace @marginly/app lint",
     "update:force": "yarn clean:node_modules && yarn"
   },
