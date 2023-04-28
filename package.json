@@ -1,0 +1,28 @@
+{
+  "name": "eq-networks",
+  "version": "0.0.0",
+  "main": "./scripts/lib.js",
+  "repository": "git@github.com:equilibrium-eosdt/eq-networks.git",
+  "author": "alex.d@equilibrium.io",
+  "license": "none",
+  "private": true,
+  "scripts": {
+    "clean:node_modules": "rm -rf node_modules && rm -rf packages/*/node_modules && rm -f yarn.lock",
+    "fix:versions": "node scripts/version.js",
+    "generate:injector": "yarn workspace @equilab/network build && yarn workspace @equilab/network generate",
+    "lint:ci": "yarn workspace @marginly/app lint",
+    "update:force": "yarn clean:node_modules && yarn"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
+  },
+  "resolutions": {
+    "typescript": "5.0.4"
+  }
+}

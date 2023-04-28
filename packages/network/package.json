@@ -1,0 +1,15 @@
+{
+  "name": "@equilab/network",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "license": "none",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "generate": "node ./dist/scripts/generate-injector.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "typescript": "5.0.4"
+  }
+}

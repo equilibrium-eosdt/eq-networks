@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+yarn-error.log
+.npmrc
+.nyc_output
+.idea
+sme-result.html
+package-lock.json
+tmp
+*.tmp
