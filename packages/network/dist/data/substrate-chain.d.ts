@@ -48,6 +48,29 @@ declare const response: {
             readonly paraId: 2085;
             readonly createdAt: "2022-10-26T13:32:02.349Z";
             readonly updatedAt: "2022-10-26T13:32:02.349Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 97;
+                    readonly attributes: {
+                        readonly name: "favicon-32x32.png";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 32;
+                        readonly height: 32;
+                        readonly formats: null;
+                        readonly hash: "favicon_32x32_b8a33aedb5";
+                        readonly ext: ".png";
+                        readonly mime: "image/png";
+                        readonly size: 2.04;
+                        readonly url: "/uploads/favicon_32x32_b8a33aedb5.png";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:01.870Z";
+                        readonly updatedAt: "2022-10-26T13:32:01.870Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 2;
@@ -100,6 +123,29 @@ declare const response: {
             readonly paraId: 2000;
             readonly createdAt: "2022-10-26T13:32:03.654Z";
             readonly updatedAt: "2022-10-26T13:32:03.654Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 98;
+                    readonly attributes: {
+                        readonly name: "icon_old (3).svg";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 30;
+                        readonly height: 30;
+                        readonly formats: null;
+                        readonly hash: "icon_old_3_8854281aaf";
+                        readonly ext: ".svg";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 2.03;
+                        readonly url: "/uploads/icon_old_3_8854281aaf.svg";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:03.174Z";
+                        readonly updatedAt: "2022-10-26T13:32:03.174Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 3;
@@ -152,6 +198,29 @@ declare const response: {
             readonly paraId: 2000;
             readonly createdAt: "2022-10-26T13:32:04.967Z";
             readonly updatedAt: "2022-10-26T13:32:04.967Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 99;
+                    readonly attributes: {
+                        readonly name: "icon_old (3).svg";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 30;
+                        readonly height: 30;
+                        readonly formats: null;
+                        readonly hash: "icon_old_3_fadda8fd86";
+                        readonly ext: ".svg";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 2.03;
+                        readonly url: "/uploads/icon_old_3_fadda8fd86.svg";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:04.488Z";
+                        readonly updatedAt: "2022-10-26T13:32:04.488Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 4;
@@ -223,6 +292,9 @@ declare const response: {
             readonly paraId: 2011;
             readonly createdAt: "2022-10-26T13:32:06.293Z";
             readonly updatedAt: "2023-02-16T11:58:08.171Z";
+            readonly logo: {
+                readonly data: null;
+            };
         };
     }, {
         readonly id: 5;
@@ -259,6 +331,29 @@ declare const response: {
             readonly paraId: null;
             readonly createdAt: "2022-10-26T13:32:07.595Z";
             readonly updatedAt: "2022-10-26T13:32:07.595Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 101;
+                    readonly attributes: {
+                        readonly name: "gens.svg";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 28;
+                        readonly height: 28;
+                        readonly formats: null;
+                        readonly hash: "gens_776a71ee2f";
+                        readonly ext: ".svg";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 10.51;
+                        readonly url: "/uploads/gens_776a71ee2f.svg";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:07.131Z";
+                        readonly updatedAt: "2022-10-26T13:32:07.131Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 6;
@@ -295,6 +390,29 @@ declare const response: {
             readonly paraId: null;
             readonly createdAt: "2022-10-26T13:32:09.100Z";
             readonly updatedAt: "2022-10-26T13:32:09.100Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 102;
+                    readonly attributes: {
+                        readonly name: "gens.svg";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 28;
+                        readonly height: 28;
+                        readonly formats: null;
+                        readonly hash: "gens_3a86ed1c18";
+                        readonly ext: ".svg";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 10.51;
+                        readonly url: "/uploads/gens_3a86ed1c18.svg";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:08.631Z";
+                        readonly updatedAt: "2022-10-26T13:32:08.631Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 7;
@@ -347,6 +465,29 @@ declare const response: {
             readonly paraId: 2000;
             readonly createdAt: "2022-10-26T13:32:10.422Z";
             readonly updatedAt: "2022-10-26T13:32:10.422Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 103;
+                    readonly attributes: {
+                        readonly name: "acala.png";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 128;
+                        readonly height: 128;
+                        readonly formats: null;
+                        readonly hash: "acala_ba88e0cdaa";
+                        readonly ext: ".png";
+                        readonly mime: "image/png";
+                        readonly size: 13.07;
+                        readonly url: "/uploads/acala_ba88e0cdaa.png";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:09.945Z";
+                        readonly updatedAt: "2022-10-26T13:32:09.945Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 8;
@@ -418,6 +559,29 @@ declare const response: {
             readonly paraId: 2004;
             readonly createdAt: "2022-10-26T13:32:11.727Z";
             readonly updatedAt: "2022-12-01T16:16:47.286Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 104;
+                    readonly attributes: {
+                        readonly name: "glmr.webp";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 50;
+                        readonly height: 50;
+                        readonly formats: null;
+                        readonly hash: "glmr_d5b6aea515";
+                        readonly ext: ".webp";
+                        readonly mime: "image/webp";
+                        readonly size: 0.87;
+                        readonly url: "/uploads/glmr_d5b6aea515.webp";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:11.271Z";
+                        readonly updatedAt: "2022-10-26T13:32:11.271Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 9;
@@ -470,6 +634,29 @@ declare const response: {
             readonly paraId: 2000;
             readonly createdAt: "2022-10-26T13:32:13.025Z";
             readonly updatedAt: "2023-02-20T12:47:26.807Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 105;
+                    readonly attributes: {
+                        readonly name: "acala.png";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 128;
+                        readonly height: 128;
+                        readonly formats: null;
+                        readonly hash: "acala_7254239a01";
+                        readonly ext: ".png";
+                        readonly mime: "image/png";
+                        readonly size: 13.07;
+                        readonly url: "/uploads/acala_7254239a01.png";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:12.561Z";
+                        readonly updatedAt: "2022-10-26T13:32:12.561Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 10;
@@ -506,6 +693,29 @@ declare const response: {
             readonly paraId: null;
             readonly createdAt: "2022-10-26T13:32:14.260Z";
             readonly updatedAt: "2023-02-21T13:21:01.665Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 106;
+                    readonly attributes: {
+                        readonly name: "gens.svg";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 28;
+                        readonly height: 28;
+                        readonly formats: null;
+                        readonly hash: "gens_2f690705db";
+                        readonly ext: ".svg";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 10.51;
+                        readonly url: "/uploads/gens_2f690705db.svg";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:13.796Z";
+                        readonly updatedAt: "2022-10-26T13:32:13.796Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 11;
@@ -577,6 +787,9 @@ declare const response: {
             readonly paraId: 2011;
             readonly createdAt: "2022-12-07T13:27:40.679Z";
             readonly updatedAt: "2023-01-26T06:47:48.063Z";
+            readonly logo: {
+                readonly data: null;
+            };
         };
     }, {
         readonly id: 12;
@@ -654,6 +867,9 @@ declare const response: {
             readonly paraId: 2011;
             readonly createdAt: "2022-12-08T09:11:30.270Z";
             readonly updatedAt: "2022-12-15T12:02:41.755Z";
+            readonly logo: {
+                readonly data: null;
+            };
         };
     }, {
         readonly id: 13;
@@ -736,6 +952,9 @@ declare const response: {
             readonly paraId: 1000;
             readonly createdAt: "2022-12-19T14:18:54.485Z";
             readonly updatedAt: "2023-02-21T11:54:48.163Z";
+            readonly logo: {
+                readonly data: null;
+            };
         };
     }, {
         readonly id: 14;
@@ -786,6 +1005,29 @@ declare const response: {
             readonly paraId: 2012;
             readonly createdAt: "2022-12-27T08:37:16.884Z";
             readonly updatedAt: "2023-03-10T12:20:58.974Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 163;
+                    readonly attributes: {
+                        readonly name: "parallel.3b34b5d6..svg";
+                        readonly alternativeText: "parallel.3b34b5d6..svg";
+                        readonly caption: "parallel.3b34b5d6..svg";
+                        readonly width: 200;
+                        readonly height: 200;
+                        readonly formats: null;
+                        readonly hash: "parallel_3b34b5d6_ee793f8b57";
+                        readonly ext: ".svg";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 1.27;
+                        readonly url: "/uploads/parallel_3b34b5d6_ee793f8b57.svg";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-12-27T08:37:01.568Z";
+                        readonly updatedAt: "2022-12-27T08:37:01.568Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 15;
@@ -810,6 +1052,29 @@ declare const response: {
             readonly paraId: 2004;
             readonly createdAt: "2023-01-17T10:25:04.282Z";
             readonly updatedAt: "2023-01-30T09:32:44.357Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 104;
+                    readonly attributes: {
+                        readonly name: "glmr.webp";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 50;
+                        readonly height: 50;
+                        readonly formats: null;
+                        readonly hash: "glmr_d5b6aea515";
+                        readonly ext: ".webp";
+                        readonly mime: "image/webp";
+                        readonly size: 0.87;
+                        readonly url: "/uploads/glmr_d5b6aea515.webp";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:11.271Z";
+                        readonly updatedAt: "2022-10-26T13:32:11.271Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 16;
@@ -886,6 +1151,41 @@ declare const response: {
             readonly paraId: 2006;
             readonly createdAt: "2023-01-19T06:30:50.584Z";
             readonly updatedAt: "2023-02-21T12:12:59.658Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 151;
+                    readonly attributes: {
+                        readonly name: "astar.png";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 250;
+                        readonly height: 250;
+                        readonly formats: {
+                            readonly thumbnail: {
+                                readonly ext: ".png";
+                                readonly url: "/uploads/thumbnail_astar_1df47d8099.png";
+                                readonly hash: "thumbnail_astar_1df47d8099";
+                                readonly mime: "image/png";
+                                readonly name: "thumbnail_astar.png";
+                                readonly path: null;
+                                readonly size: 49.31;
+                                readonly width: 156;
+                                readonly height: 156;
+                            };
+                        };
+                        readonly hash: "astar_1df47d8099";
+                        readonly ext: ".png";
+                        readonly mime: "image/png";
+                        readonly size: 14.82;
+                        readonly url: "/uploads/astar_1df47d8099.png";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:33:51.027Z";
+                        readonly updatedAt: "2023-01-19T06:30:43.058Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 17;
@@ -938,6 +1238,29 @@ declare const response: {
             readonly paraId: 2032;
             readonly createdAt: "2023-01-24T07:55:34.878Z";
             readonly updatedAt: "2023-04-24T08:56:39.867Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 121;
+                    readonly attributes: {
+                        readonly name: "1638967991_interlay_logo.png";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 84;
+                        readonly height: 84;
+                        readonly formats: {};
+                        readonly hash: "1638967991_interlay_logo_e78834f178";
+                        readonly ext: ".png";
+                        readonly mime: "image/svg+xml";
+                        readonly size: 2.54;
+                        readonly url: "/uploads/1638967991_interlay_logo_e78834f178.png";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:51.013Z";
+                        readonly updatedAt: "2023-02-02T10:22:47.576Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 18;
@@ -1014,6 +1337,41 @@ declare const response: {
             readonly paraId: 2006;
             readonly createdAt: "2023-02-20T13:19:41.077Z";
             readonly updatedAt: "2023-02-21T11:58:57.257Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 151;
+                    readonly attributes: {
+                        readonly name: "astar.png";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 250;
+                        readonly height: 250;
+                        readonly formats: {
+                            readonly thumbnail: {
+                                readonly ext: ".png";
+                                readonly url: "/uploads/thumbnail_astar_1df47d8099.png";
+                                readonly hash: "thumbnail_astar_1df47d8099";
+                                readonly mime: "image/png";
+                                readonly name: "thumbnail_astar.png";
+                                readonly path: null;
+                                readonly size: 49.31;
+                                readonly width: 156;
+                                readonly height: 156;
+                            };
+                        };
+                        readonly hash: "astar_1df47d8099";
+                        readonly ext: ".png";
+                        readonly mime: "image/png";
+                        readonly size: 14.82;
+                        readonly url: "/uploads/astar_1df47d8099.png";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:33:51.027Z";
+                        readonly updatedAt: "2023-01-19T06:30:43.058Z";
+                    };
+                };
+            };
         };
     }, {
         readonly id: 19;
@@ -1038,12 +1396,35 @@ declare const response: {
             readonly paraId: 2004;
             readonly createdAt: "2023-04-18T11:58:36.957Z";
             readonly updatedAt: "2023-04-18T11:58:36.957Z";
+            readonly logo: {
+                readonly data: {
+                    readonly id: 104;
+                    readonly attributes: {
+                        readonly name: "glmr.webp";
+                        readonly alternativeText: null;
+                        readonly caption: null;
+                        readonly width: 50;
+                        readonly height: 50;
+                        readonly formats: null;
+                        readonly hash: "glmr_d5b6aea515";
+                        readonly ext: ".webp";
+                        readonly mime: "image/webp";
+                        readonly size: 0.87;
+                        readonly url: "/uploads/glmr_d5b6aea515.webp";
+                        readonly previewUrl: null;
+                        readonly provider: "local";
+                        readonly provider_metadata: null;
+                        readonly createdAt: "2022-10-26T13:32:11.271Z";
+                        readonly updatedAt: "2022-10-26T13:32:11.271Z";
+                    };
+                };
+            };
         };
     }];
     readonly meta: {
         readonly pagination: {
             readonly page: 1;
-            readonly pageSize: 25;
+            readonly pageSize: 100;
             readonly pageCount: 1;
             readonly total: 19;
         };
