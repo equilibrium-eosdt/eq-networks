@@ -24,6 +24,8 @@
     "typescript": "5.0.4"
   },
   "resolutions": {
+    "@polkadot/api": "10.6.1",
+    "@polkadot/typegen": "10.6.1",
     "typescript": "5.0.4"
   }
 }
