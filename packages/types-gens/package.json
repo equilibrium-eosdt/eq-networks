@@ -1,0 +1,28 @@
+{
+  "name": "@equilab/types-gens",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Genshiro parachain generated types",
+  "main": "./interfaces/index.js",
+  "author": "Alex D",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@polkadot/api": "10.6.1"
+  },
+  "devDependencies": {
+    "@polkadot/typegen": "10.6.1",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
+  },
+  "scripts": {
+    "clean:interfaces": "rm ./src/interfaces/*.ts && cp -r ./src/placeholder/* ./src/interfaces/",
+    "build": "yarn clean:interfaces && yarn generate && tsc --build",
+    "generate:defs": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @equilab/types-gens/interfaces --input ./src/interfaces --endpoint wss://node.ksm.genshiro.io",
+    "generate:meta": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @equilab/types-gens/interfaces --endpoint wss://node.ksm.genshiro.io --output ./src/interfaces",
+    "generate": "yarn generate:defs && yarn generate:meta",
+    "lint": "tsc --noEmit --pretty",
+    "preversion": "yarn build",
+    "postversion": "./bin/postversion.sh"
+  }
+}
