@@ -47,6 +47,7 @@ var evm_smart_contract_call_1 = __importDefault(require("../data/evm-smart-contr
 var evm_smart_contract_1 = __importDefault(require("../data/evm-smart-contract"));
 var substrate_chain_1 = __importDefault(require("../data/substrate-chain"));
 var token_crosschain_1 = __importDefault(require("../data/token-crosschain"));
+var tokens_1 = require("../config/tokens");
 var template = function (jsonStr, callbackName) {
     if (callbackName === void 0) { callbackName = "_networkInjectorCallback"; }
     return "// file is auto generated; do not edit\nconst data = ".concat(jsonStr, ";\n\nwindow.").concat(callbackName, " = () => ({\n  version: \"v0\",\n  v0: data\n});\n");
@@ -56,8 +57,7 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                outDir = process.env.OUT_DIR || path_1.default.join(process.cwd());
-                console.log({ outDir: outDir });
+                outDir = process.env.OUT_DIR || path_1.default.join(process.cwd(), "..", "..", "docs");
                 return [4 /*yield*/, promises_1.default.writeFile(path_1.default.join(outDir, "injector.js"), template(JSON.stringify({
                         "evm-chain": evm_chain_1.default,
                         "evm-flow": evm_flow_1.default,
@@ -65,6 +65,7 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
                         "evm-smart-contract": evm_smart_contract_1.default,
                         "substrate-chain": substrate_chain_1.default,
                         "token-crosschain": token_crosschain_1.default,
+                        "gens-tokens": tokens_1.genshiro,
                     })))];
             case 1:
                 _a.sent();

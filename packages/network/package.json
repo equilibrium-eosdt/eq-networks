@@ -7,7 +7,9 @@
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo && mkdir ./dist && touch ./dist/.gitkeep",
     "build": "yarn clean && tsc",
-    "generate": "node ./dist/scripts/generate-injector.js",
+    "generate:injector": "node ./dist/scripts/generate-injector.js",
+    "copy:assets": "node ./dist/scripts/copy-assets.js",
+    "generate": "yarn generate:injector && yarn copy:assets",
     "postversion": "./bin/postversion.sh"
   },
   "devDependencies": {

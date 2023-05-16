@@ -6,6 +6,7 @@ import evmSmartContractCallResponse from "../data/evm-smart-contract-call";
 import evmSmartContractResponse from "../data/evm-smart-contract";
 import substrateChainResponse from "../data/substrate-chain";
 import tokenCrosschainResponse from "../data/token-crosschain";
+import { genshiro } from "../config/tokens";
 
 const template = (
   jsonStr: string,
@@ -20,8 +21,8 @@ window.${callbackName} = () => ({
 `;
 
 const main = async () => {
-  const outDir = process.env.OUT_DIR || path.join(process.cwd());
-  console.log({ outDir });
+  const outDir =
+    process.env.OUT_DIR || path.join(process.cwd(), "..", "..", "docs");
 
   await fs.writeFile(
     path.join(outDir, "injector.js"),
@@ -33,6 +34,7 @@ const main = async () => {
         "evm-smart-contract": evmSmartContractResponse,
         "substrate-chain": substrateChainResponse,
         "token-crosschain": tokenCrosschainResponse,
+        "gens-tokens": genshiro,
       }),
     ),
   );

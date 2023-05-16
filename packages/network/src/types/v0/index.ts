@@ -1,6 +1,7 @@
 import type RawEvmChainResponse from "../../data/evm-chain";
 import type RawEvmFlowResponse from "../../data/evm-chain";
 import type RawEvmSmartContractCallResponse from "../../data/evm-chain";
+import type { genshiro as genshiroTokens } from "../../config/tokens";
 import type RawEvmSmartContractResponse from "../../data/evm-chain";
 import type RawSubstrateChainResponse from "../../data/evm-chain";
 import type RawTokenCrosschainResponse from "../../data/evm-chain";
@@ -20,4 +21,5 @@ export interface TypeMap {
   "evm-smart-contract": EvmSmartContractResponse;
   "substrate-chain": SubstrateChainResponse;
   "token-crosschain": TokenCrosschainResponse;
+  "gens-tokens": typeof genshiroTokens;
 }
