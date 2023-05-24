@@ -1,7 +1,7 @@
 {
   "name": "@equilab/types-gens",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Genshiro parachain generated types",
   "main": "./interfaces/index.js",
   "author": "Alex D",
