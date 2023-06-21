@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var response = {
+const response = {
     data: [
         {
             id: 1,

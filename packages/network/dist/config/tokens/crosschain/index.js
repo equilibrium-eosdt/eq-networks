@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.V0Types = void 0;
-const V0Types = __importStar(require("./v0"));
-exports.V0Types = V0Types;
+const statemint = __importStar(require("./statemint"));
+exports.default = {
+    statemint,
+};

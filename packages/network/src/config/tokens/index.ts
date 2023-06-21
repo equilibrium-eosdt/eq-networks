@@ -1,4 +1,5 @@
-import type { SupportedExtensions } from "../types/media";
+import crosschain from "./crosschain";
+import type { SupportedExtensions } from "../../types/media";
 
 interface TokenConfig {
   name: string;
@@ -18,3 +19,5 @@ export const genshiro: Record<string, Omit<TokenConfig, "name">> = {
     imageExt: ".svg",
   },
 };
+
+export { crosschain };

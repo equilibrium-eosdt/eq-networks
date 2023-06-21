@@ -16,9 +16,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.injectTypes = void 0;
 __exportStar(require("./types"), exports);
-var injectTypes = function (url, callbackName) {
-    var resolve;
-    var promise = new Promise(function (r) {
+const injectTypes = (url, callbackName) => {
+    let resolve;
+    const promise = new Promise((r) => {
         resolve = r;
     });
     // @ts-expect-error
@@ -29,8 +29,8 @@ var injectTypes = function (url, callbackName) {
         resolve(undefined);
         return promise;
     }
-    var checkCallback = function () {
-        var callback = window[callbackName];
+    const checkCallback = () => {
+        const callback = window[callbackName];
         if (typeof callback === "function") {
             resolve(callback());
             return true;
@@ -40,12 +40,12 @@ var injectTypes = function (url, callbackName) {
     if (checkCallback()) {
         return promise;
     }
-    var interval = setInterval(function () {
+    const interval = setInterval(() => {
         if (checkCallback()) {
             clearInterval(interval);
         }
     }, 100);
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     script.type = "text/javascript";
     script.async = true;
     script.src = url;
