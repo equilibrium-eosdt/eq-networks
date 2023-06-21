@@ -6,7 +6,8 @@ import evmSmartContractCallResponse from "../data/evm-smart-contract-call";
 import evmSmartContractResponse from "../data/evm-smart-contract";
 import substrateChainResponse from "../data/substrate-chain";
 import tokenCrosschainResponse from "../data/token-crosschain";
-import { genshiro } from "../config/tokens";
+import chains from "../config/chains";
+import { genshiro, crosschain } from "../config/tokens";
 
 const template = (
   jsonStr: string,
@@ -16,7 +17,7 @@ const data = ${jsonStr};
 
 window.${callbackName} = () => ({
   version: "v0",
-  v0: data
+  ...data
 });
 `;
 
@@ -27,15 +28,32 @@ const main = async () => {
   await fs.writeFile(
     path.join(outDir, "injector.js"),
     template(
-      JSON.stringify({
-        "evm-chain": evmChainResponse,
-        "evm-flow": evmFlowResponse,
-        "evm-smart-contract-call": evmSmartContractCallResponse,
-        "evm-smart-contract": evmSmartContractResponse,
-        "substrate-chain": substrateChainResponse,
-        "token-crosschain": tokenCrosschainResponse,
-        "gens-tokens": genshiro,
-      }),
+      JSON.stringify(
+        {
+          v0: {
+            "evm-chain": evmChainResponse,
+            "evm-flow": evmFlowResponse,
+            "evm-smart-contract-call": evmSmartContractCallResponse,
+            "evm-smart-contract": evmSmartContractResponse,
+            "substrate-chain": substrateChainResponse,
+            "token-crosschain": tokenCrosschainResponse,
+            "gens-tokens": genshiro,
+          },
+          v1: {
+            chains,
+            crosschain,
+          },
+        },
+        (_, v) => {
+          if (typeof v === "function") {
+            return {
+              func$: v.toString(),
+            };
+          }
+
+          return v;
+        },
+      ),
     ),
   );
 };

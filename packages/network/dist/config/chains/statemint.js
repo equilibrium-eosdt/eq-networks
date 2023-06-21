@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.statemint = void 0;
-const math_1 = require("../../util/math");
 const getBalance = (pub, context) => ({
     section: "assets",
     method: "account",
@@ -27,11 +26,6 @@ const parseNativeBalance = (data, options) => {
     };
 };
 const getTransferArgs = (amount, pub, context) => {
-    var _a;
-    if (!(0, math_1.isNumStr)(amount)) {
-        throw new Error("incorrect amount");
-    }
-    const bf = (0, math_1.createBF)(amount);
     return {
         section: "polkadotXcm",
         method: "limitedReserveTransferAssets",
@@ -59,7 +53,7 @@ const getTransferArgs = (amount, pub, context) => {
                             },
                         },
                         fun: {
-                            Fungible: (0, math_1.toBigint)(bf, (_a = context === null || context === void 0 ? void 0 : context.decimals) !== null && _a !== void 0 ? _a : 0).toString(10),
+                            Fungible: amount,
                         },
                     },
                 ],

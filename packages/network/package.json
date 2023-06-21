@@ -10,7 +10,8 @@
     "generate:injector": "node ./dist/scripts/generate-injector.js",
     "copy:assets": "node ./dist/scripts/copy-assets.js",
     "generate": "yarn generate:injector && yarn copy:assets",
-    "postversion": "./bin/postversion.sh"
+    "postversion": "./bin/postversion.sh",
+    "test": "yarn build && node ./dist/scripts/test.js"
   },
   "devDependencies": {
     "@types/node": "^18.16.2",
