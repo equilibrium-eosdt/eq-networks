@@ -19,7 +19,7 @@ declare const _default: {
             value: bigint;
             decimals: number;
         };
-        getTransferArgs: (amount: string, pub: `0x${string}`, context?: Record<string, any> | undefined) => {
+        getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any> | undefined) => {
             readonly section: "polkadotXcm";
             readonly method: "limitedReserveTransferAssets";
             readonly args: readonly [{
@@ -58,7 +58,7 @@ declare const _default: {
                         };
                     };
                     readonly fun: {
-                        readonly Fungible: string;
+                        readonly Fungible: `${number}`;
                     };
                 }];
             }, 0, {

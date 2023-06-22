@@ -1,11 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.toBigDecimals = exports.toBigFraction = exports.toBigint = exports.createBF = exports.isNumStr = void 0;
-const isNumStr = (numStr) => {
-    const num = Number(numStr);
-    return Number.isFinite(num);
-};
-exports.isNumStr = isNumStr;
+exports.toBigDecimals = exports.toBigFraction = exports.toBigint = exports.createBF = void 0;
 const createBF = (numStr) => {
     var _a;
     const [int, fra] = ((_a = numStr === null || numStr === void 0 ? void 0 : numStr.split(".")) !== null && _a !== void 0 ? _a : ["0", "0"]);

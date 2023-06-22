@@ -1,4 +1,4 @@
-import { BigDecimals, createBF, isNumStr, toBigint } from "../../util/math";
+import type { BigDecimals } from "../../util/math";
 
 const getBalance = (pub: `0x${string}`, context?: Record<string, any>) =>
   ({
@@ -29,16 +29,10 @@ const parseNativeBalance = (data: any, options?: Record<string, any>) => {
 };
 
 const getTransferArgs = (
-  amount: string,
+  amount: `${number}`,
   pub: `0x${string}`,
   context?: Record<string, any>,
 ) => {
-  if (!isNumStr(amount)) {
-    throw new Error("incorrect amount");
-  }
-
-  const bf = createBF(amount);
-
   return {
     section: "polkadotXcm",
     method: "limitedReserveTransferAssets",
@@ -66,7 +60,7 @@ const getTransferArgs = (
               },
             },
             fun: {
-              Fungible: toBigint(bf, context?.decimals ?? 0).toString(10),
+              Fungible: amount,
             },
           },
         ],

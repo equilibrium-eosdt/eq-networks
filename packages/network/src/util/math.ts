@@ -5,11 +5,6 @@ export interface BigDecimals {
   decimals?: number;
 }
 
-export const isNumStr = (numStr?: string): numStr is `${number}` => {
-  const num = Number(numStr);
-  return Number.isFinite(num);
-};
-
 export const createBF = (numStr?: `${number}`): BigFraction => {
   const [int, fra]: [`${number}` | undefined, `${number}` | undefined] =
     (numStr?.split(".") ?? ["0", "0"]) as any;
@@ -17,10 +12,7 @@ export const createBF = (numStr?: `${number}`): BigFraction => {
   return [BigInt(int ?? 0), BigInt(fra ?? 0)];
 };
 
-export const toBigint = (
-  bf: BigFraction,
-  decimals: number,
-): bigint => {
+export const toBigint = (bf: BigFraction, decimals: number): bigint => {
   const [int, fra] = bf;
   const mul = BigInt(10) ** BigInt(decimals);
 

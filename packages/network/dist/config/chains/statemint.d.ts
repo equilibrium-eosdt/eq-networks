@@ -1,4 +1,4 @@
-import { BigDecimals } from "../../util/math";
+import type { BigDecimals } from "../../util/math";
 export declare const statemint: {
     name: string;
     title: string;
@@ -19,7 +19,7 @@ export declare const statemint: {
         value: bigint;
         decimals: number;
     };
-    getTransferArgs: (amount: string, pub: `0x${string}`, context?: Record<string, any>) => {
+    getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any>) => {
         readonly section: "polkadotXcm";
         readonly method: "limitedReserveTransferAssets";
         readonly args: readonly [{
@@ -58,7 +58,7 @@ export declare const statemint: {
                     };
                 };
                 readonly fun: {
-                    readonly Fungible: string;
+                    readonly Fungible: `${number}`;
                 };
             }];
         }, 0, {

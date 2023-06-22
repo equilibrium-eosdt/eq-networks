@@ -20,25 +20,39 @@ const evm_smart_contract_call_1 = __importDefault(require("../data/evm-smart-con
 const evm_smart_contract_1 = __importDefault(require("../data/evm-smart-contract"));
 const substrate_chain_1 = __importDefault(require("../data/substrate-chain"));
 const token_crosschain_1 = __importDefault(require("../data/token-crosschain"));
+const chains_1 = __importDefault(require("../config/chains"));
 const tokens_1 = require("../config/tokens");
 const template = (jsonStr, callbackName = "_networkInjectorCallback") => `// file is auto generated; do not edit
 const data = ${jsonStr};
 
 window.${callbackName} = () => ({
   version: "v0",
-  v0: data
+  ...data
 });
 `;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const outDir = process.env.OUT_DIR || path_1.default.join(process.cwd(), "..", "..", "docs");
     yield promises_1.default.writeFile(path_1.default.join(outDir, "injector.js"), template(JSON.stringify({
-        "evm-chain": evm_chain_1.default,
-        "evm-flow": evm_flow_1.default,
-        "evm-smart-contract-call": evm_smart_contract_call_1.default,
-        "evm-smart-contract": evm_smart_contract_1.default,
-        "substrate-chain": substrate_chain_1.default,
-        "token-crosschain": token_crosschain_1.default,
-        "gens-tokens": tokens_1.genshiro,
+        v0: {
+            "evm-chain": evm_chain_1.default,
+            "evm-flow": evm_flow_1.default,
+            "evm-smart-contract-call": evm_smart_contract_call_1.default,
+            "evm-smart-contract": evm_smart_contract_1.default,
+            "substrate-chain": substrate_chain_1.default,
+            "token-crosschain": token_crosschain_1.default,
+            "gens-tokens": tokens_1.genshiro,
+        },
+        v1: {
+            chains: chains_1.default,
+            crosschain: tokens_1.crosschain,
+        },
+    }, (_, v) => {
+        if (typeof v === "function") {
+            return {
+                func$: v.toString(),
+            };
+        }
+        return v;
     })));
 });
 main().catch((e) => {

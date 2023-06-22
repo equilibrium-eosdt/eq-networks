@@ -1,9 +1,13 @@
-import type { TypeVersions, V0Types } from "./types";
+import { deserialize } from "v8";
+import type { TypeVersions, V0Types, V1Types } from "./types";
+import { hasKey } from "./util/check";
+import { deserializeFunction } from "./util/serialize";
 export * from "./types";
 
 interface InjectResponse {
   version: TypeVersions;
   v0?: V0Types.TypeMap;
+  v1?: V1Types.TypeMap;
 }
 
 export const injectTypes = (url: string, callbackName: string) => {
@@ -29,7 +33,22 @@ export const injectTypes = (url: string, callbackName: string) => {
       | undefined;
 
     if (typeof callback === "function") {
-      resolve(callback());
+      const { version, ...rest } = callback();
+
+      resolve({
+        version,
+        [version]: rest[version],
+        /** @deprecated experimental API */
+        v1: JSON.parse(JSON.stringify(rest.v1), (_, v) => {
+          if (hasKey("func$", v) && typeof v.func$ === "string") {
+            const { func$ } = v;
+            // fixme types
+            return deserializeFunction({ func$ });
+          }
+
+          return v;
+        }),
+      });
       return true;
     }
 
