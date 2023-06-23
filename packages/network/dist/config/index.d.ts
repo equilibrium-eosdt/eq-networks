@@ -25,7 +25,7 @@ declare const _default: {
                 readonly section: "polkadotXcm";
                 readonly method: "limitedReserveTransferAssets";
                 readonly args: readonly [{
-                    readonly V1: {
+                    readonly V2: {
                         readonly parents: "1";
                         readonly interior: {
                             readonly X1: {
@@ -34,7 +34,7 @@ declare const _default: {
                         };
                     };
                 }, {
-                    readonly V1: {
+                    readonly V2: {
                         readonly parents: 0;
                         readonly interior: {
                             readonly X1: {
@@ -46,7 +46,7 @@ declare const _default: {
                         };
                     };
                 }, {
-                    readonly V1: readonly [{
+                    readonly V2: readonly [{
                         readonly id: {
                             readonly Concrete: {
                                 readonly parents: 0;
