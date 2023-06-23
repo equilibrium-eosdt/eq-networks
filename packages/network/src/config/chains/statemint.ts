@@ -38,10 +38,10 @@ const getTransferArgs = (
     method: "limitedReserveTransferAssets",
     args: [
       {
-        V1: { parents: "1", interior: { X1: { Parachain: "2011" } } },
+        V2: { parents: "1", interior: { X1: { Parachain: "2011" } } },
       },
       {
-        V1: {
+        V2: {
           parents: 0,
           interior: {
             X1: { AccountId32: { id: pub, network: "Any" } },
@@ -49,7 +49,7 @@ const getTransferArgs = (
         },
       },
       {
-        V1: [
+        V2: [
           {
             id: {
               Concrete: {
