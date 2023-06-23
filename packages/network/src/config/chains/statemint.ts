@@ -66,7 +66,7 @@ const getTransferArgs = (
         ],
       },
       0,
-      { Limited: "800000000" },
+      { Unlimited: null },
     ],
   } as const;
 };

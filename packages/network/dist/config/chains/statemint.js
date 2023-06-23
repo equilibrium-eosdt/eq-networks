@@ -59,7 +59,7 @@ const getTransferArgs = (amount, pub, context) => {
                 ],
             },
             0,
-            { Limited: "800000000" },
+            { Unlimited: null },
         ],
     };
 };
