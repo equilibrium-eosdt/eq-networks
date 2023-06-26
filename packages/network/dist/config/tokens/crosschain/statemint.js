@@ -9,4 +9,13 @@ exports.usdt = {
         asset: 1984,
         decimals: 6,
     },
+    fees: [
+        {
+            convert: true,
+            amount: 0.1,
+            name: "xcm",
+            token: "usdt",
+        },
+    ],
+    existentialDeposit: 0.7,
 };

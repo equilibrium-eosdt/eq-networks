@@ -23,7 +23,7 @@ export declare const statemint: {
         readonly section: "polkadotXcm";
         readonly method: "limitedReserveTransferAssets";
         readonly args: readonly [{
-            readonly V2: {
+            readonly V3: {
                 readonly parents: "1";
                 readonly interior: {
                     readonly X1: {
@@ -32,19 +32,19 @@ export declare const statemint: {
                 };
             };
         }, {
-            readonly V2: {
+            readonly V3: {
                 readonly parents: 0;
                 readonly interior: {
                     readonly X1: {
                         readonly AccountId32: {
                             readonly id: `0x${string}`;
-                            readonly network: "Any";
+                            readonly network: null;
                         };
                     };
                 };
             };
         }, {
-            readonly V2: readonly [{
+            readonly V3: readonly [{
                 readonly id: {
                     readonly Concrete: {
                         readonly parents: 0;
