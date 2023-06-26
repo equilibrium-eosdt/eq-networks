@@ -11,6 +11,7 @@
     "clean:node_modules": "rm -rf node_modules && rm -rf packages/*/node_modules && rm -f yarn.lock",
     "fix:versions": "node scripts/version.js",
     "generate:injector": "yarn clean:generated && OUT_DIR=`pwd`/docs yarn workspace @equilab/network test && sleep 2 && yarn workspace @equilab/network generate",
+    "generate:types": "yarn workspace @equilab/types-eq build && yarn workspace @equilab/types-gens build",
     "lint:ci": "yarn workspace @marginly/app lint",
     "update:force": "yarn clean:node_modules && yarn"
   },
