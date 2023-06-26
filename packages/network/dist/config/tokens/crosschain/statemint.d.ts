@@ -7,9 +7,10 @@ export declare const usdt: {
         decimals: number;
     };
     fees: {
-        usd: boolean;
+        convert: boolean;
         amount: number;
         name: string;
+        token: string;
     }[];
     existentialDeposit: number;
 };
