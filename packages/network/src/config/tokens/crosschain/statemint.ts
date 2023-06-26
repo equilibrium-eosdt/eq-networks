@@ -6,4 +6,10 @@ export const usdt = {
     asset: 1984,
     decimals: 6,
   },
+  fees: [{
+    usd: true,
+    amount: 0.1,
+    name: "xcm"
+  }],
+  existentialDeposit: 0.7
 };
