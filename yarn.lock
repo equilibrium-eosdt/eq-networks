@@ -79,7 +79,7 @@
     rxjs "^7.8.1"
     tslib "^2.5.0"
 
-"@polkadot/api@10.6.1", "@polkadot/api@10.7.1":
+"@polkadot/api@10.7.1":
   version "10.7.1"
   resolved "https://registry.yarnpkg.com/@polkadot/api/-/api-10.7.1.tgz#a0735f18f3a06041b7bd1330e8bb50dc741230ee"
   integrity sha512-6jVYCVlKvQC1HctlZdH3fg28yWb5Wv7IMJn055j66aE+D54z+P8VYdUx17rZsUCWjg6lMlVyzybM9aTm5TE8Sw==
@@ -163,7 +163,7 @@
   optionalDependencies:
     "@substrate/connect" "0.7.26"
 
-"@polkadot/typegen@10.6.1", "@polkadot/typegen@10.7.1":
+"@polkadot/typegen@10.7.1":
   version "10.7.1"
   resolved "https://registry.yarnpkg.com/@polkadot/typegen/-/typegen-10.7.1.tgz#f098a838b1d76996b5bcb2808dc8b491569b49ba"
   integrity sha512-weXShJAqk5ViI0ikIuzAyvaGAUunayjdDIlu4ogHCfMvAQiSj5Ub7Z6VdrzAqbKPq8f9OsSYv4LtVmCwzR2gEg==

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@equilab/types-gens/*": ["./src/*"],
+      "@polkadot/api/augment": ["./src/interfaces/augment-api.ts"],
+      "@polkadot/types/augment": ["./src/interfaces/augment-types.ts"]
+    },
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "declaration": true,
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "./interfaces",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  },
+  "ts-node": {
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["./src/interfaces"],
+  "exclude": ["node_modules"]
+}

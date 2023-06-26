@@ -1,0 +1,4 @@
+interfaces/*
+src/interfaces/*
+!src/interfaces/.gitkeep
+
