@@ -1,9 +1,31 @@
 declare const _default: {
-    readonly statemint: {
+    readonly genshiro: {
+        getBalance: (pub: `0x${string}`) => {
+            readonly section: "system";
+            readonly method: "account";
+            readonly args: readonly [`0x${string}`];
+        };
+        parseBalance: (data: any, context?: Record<string, any> | undefined) => import("../../util/math").BigDecimals;
+        getNativeBalance: (pub: `0x${string}`) => {
+            readonly section: "system";
+            readonly method: "account";
+            readonly args: readonly [`0x${string}`];
+        };
+        parseNativeBalance: (data: any, context?: Record<string, any> | undefined) => import("../../util/math").BigDecimals;
+        getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any> | undefined) => {
+            readonly section: "polkadotXcm";
+            readonly method: "limitedReserveTransferAssets";
+            readonly args: readonly [`${number}`, `0x${string}`, 7, any];
+        };
+        nodes: string[];
+        paraId?: number | undefined;
+        type: "substrate";
         name: string;
         title: string;
         nativeToken: string;
-        type: string;
+        logo?: string | null | undefined;
+    };
+    readonly statemint: {
         getBalance: (pub: `0x${string}`, context?: Record<string, any> | undefined) => {
             readonly section: "assets";
             readonly method: "account";
@@ -52,7 +74,7 @@ declare const _default: {
                                 readonly X2: readonly [{
                                     readonly PalletInstance: 50;
                                 }, {
-                                    readonly GeneralIndex: 1984;
+                                    readonly GeneralIndex: any;
                                 }];
                             };
                         };
@@ -66,8 +88,12 @@ declare const _default: {
             }];
         };
         nodes: string[];
-        paraId: number;
-        logo: null;
+        paraId?: number | undefined;
+        type: "substrate";
+        name: string;
+        title: string;
+        nativeToken: string;
+        logo?: string | null | undefined;
     };
 };
 export default _default;

@@ -1,9 +1,5 @@
 import type { BigDecimals } from "../../util/math";
 export declare const statemint: {
-    name: string;
-    title: string;
-    nativeToken: string;
-    type: string;
     getBalance: (pub: `0x${string}`, context?: Record<string, any>) => {
         readonly section: "assets";
         readonly method: "account";
@@ -52,7 +48,7 @@ export declare const statemint: {
                             readonly X2: readonly [{
                                 readonly PalletInstance: 50;
                             }, {
-                                readonly GeneralIndex: 1984;
+                                readonly GeneralIndex: any;
                             }];
                         };
                     };
@@ -66,6 +62,10 @@ export declare const statemint: {
         }];
     };
     nodes: string[];
-    paraId: number;
-    logo: null;
+    paraId?: number | undefined;
+    type: "substrate";
+    name: string;
+    title: string;
+    nativeToken: string;
+    logo?: string | null | undefined;
 };

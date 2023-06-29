@@ -1,3 +1,4 @@
+import type { SubstrateChain } from "../../types/v1";
 import type { BigDecimals } from "../../util/math";
 
 const getBalance = (pub: `0x${string}`, context?: Record<string, any>) =>
@@ -55,7 +56,10 @@ const getTransferArgs = (
               Concrete: {
                 parents: 0,
                 interior: {
-                  X2: [{ PalletInstance: 50 }, { GeneralIndex: 1984 }],
+                  X2: [
+                    { PalletInstance: 50 },
+                    { GeneralIndex: context?.asset },
+                  ],
                 },
               },
             },
@@ -71,11 +75,7 @@ const getTransferArgs = (
   } as const;
 };
 
-export const statemint = {
-  name: "statemint",
-  title: "Statemint",
-  nativeToken: "dot",
-  type: "substrate",
+const fns = {
   // balances
   getBalance,
   parseBalance,
@@ -84,6 +84,14 @@ export const statemint = {
   parseNativeBalance,
   // transfer
   getTransferArgs,
+} as const;
+
+const chainDef: SubstrateChain = {
+  name: "statemint",
+  title: "Statemint",
+  nativeToken: "dot",
+  type: "substrate",
+  logo: null,
 
   nodes: [
     "wss://statemint-rpc.polkadot.io",
@@ -92,5 +100,9 @@ export const statemint = {
   ],
 
   paraId: 1000,
-  logo: null,
+};
+
+export const statemint = {
+  ...chainDef,
+  ...fns,
 };
