@@ -13,8 +13,8 @@ export declare const genshiro: {
     };
     parseNativeBalance: (data: any, context?: Record<string, any>) => BigDecimals;
     getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any>) => {
-        readonly section: "polkadotXcm";
-        readonly method: "limitedReserveTransferAssets";
+        readonly section: "eqBridge";
+        readonly method: "transferNative";
         readonly args: readonly [`${number}`, `0x${string}`, 7, any];
     };
     nodes: string[];

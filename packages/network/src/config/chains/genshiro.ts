@@ -48,8 +48,8 @@ const getTransferArgs = (
   context?: Record<string, any>,
 ) => {
   return {
-    section: "polkadotXcm",
-    method: "limitedReserveTransferAssets",
+    section: "eqBridge",
+    method: "transferNative",
     args: [amount, pub, 7, context?.resourceId],
   } as const;
 };

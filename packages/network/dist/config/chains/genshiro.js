@@ -30,8 +30,8 @@ const parseBalance = (data, context) => {
 const parseNativeBalance = parseBalance;
 const getTransferArgs = (amount, pub, context) => {
     return {
-        section: "polkadotXcm",
-        method: "limitedReserveTransferAssets",
+        section: "eqBridge",
+        method: "transferNative",
         args: [amount, pub, 7, context === null || context === void 0 ? void 0 : context.resourceId],
     };
 };
