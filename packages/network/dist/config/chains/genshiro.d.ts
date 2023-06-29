@@ -19,6 +19,7 @@ export declare const genshiro: {
     };
     nodes: string[];
     paraId?: number | undefined;
+    withdraw?: import("../../types/v1").SubstrateWithdrawType | undefined;
     type: "substrate";
     name: string;
     title: string;

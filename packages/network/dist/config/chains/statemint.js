@@ -82,6 +82,7 @@ const chainDef = {
     nativeToken: "dot",
     type: "substrate",
     logo: null,
+    withdraw: "parachain",
     nodes: [
         "wss://statemint-rpc.polkadot.io",
         "wss://statemint.api.onfinality.io/public-ws",

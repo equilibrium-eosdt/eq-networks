@@ -92,6 +92,7 @@ const chainDef: SubstrateChain = {
   nativeToken: "dot",
   type: "substrate",
   logo: null,
+  withdraw: "parachain",
 
   nodes: [
     "wss://statemint-rpc.polkadot.io",
