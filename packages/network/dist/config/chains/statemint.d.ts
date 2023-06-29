@@ -1,72 +1,9 @@
-import type { BigDecimals } from "../../util/math";
-export declare const statemint: {
-    getBalance: (pub: `0x${string}`, context?: Record<string, any>) => {
-        readonly section: "assets";
-        readonly method: "account";
-        readonly args: readonly [any, `0x${string}`];
-    };
-    parseBalance: (data: any, context?: Record<string, any>) => BigDecimals;
-    getNativeBalance: (pub: `0x${string}`) => {
-        readonly section: "system";
-        readonly method: "account";
-        readonly args: readonly [`0x${string}`];
-    };
-    parseNativeBalance: (data: any, options?: Record<string, any>) => {
-        value: bigint;
-        decimals: number;
-    };
-    getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any>) => {
-        readonly section: "polkadotXcm";
-        readonly method: "limitedReserveTransferAssets";
-        readonly args: readonly [{
-            readonly V2: {
-                readonly parents: "1";
-                readonly interior: {
-                    readonly X1: {
-                        readonly Parachain: "2011";
-                    };
-                };
-            };
-        }, {
-            readonly V2: {
-                readonly parents: 0;
-                readonly interior: {
-                    readonly X1: {
-                        readonly AccountId32: {
-                            readonly id: `0x${string}`;
-                            readonly network: "Any";
-                        };
-                    };
-                };
-            };
-        }, {
-            readonly V2: readonly [{
-                readonly id: {
-                    readonly Concrete: {
-                        readonly parents: 0;
-                        readonly interior: {
-                            readonly X2: readonly [{
-                                readonly PalletInstance: 50;
-                            }, {
-                                readonly GeneralIndex: any;
-                            }];
-                        };
-                    };
-                };
-                readonly fun: {
-                    readonly Fungible: `${number}`;
-                };
-            }];
-        }, 0, {
-            readonly Unlimited: null;
-        }];
-    };
-    nodes: string[];
-    paraId?: number | undefined;
-    withdraw?: import("../../types/v1").SubstrateWithdrawType | undefined;
-    type: "substrate";
-    name: string;
-    title: string;
-    nativeToken: string;
-    logo?: string | null | undefined;
-};
+import type { DefaultContext, SubstrateChain } from "../../types/v1";
+export interface StatemintContext extends DefaultContext {
+    prices?: Record<string, number>;
+    asset?: number;
+    decimals?: number;
+    resourceId?: string;
+}
+declare const chainDef: SubstrateChain;
+export default chainDef;

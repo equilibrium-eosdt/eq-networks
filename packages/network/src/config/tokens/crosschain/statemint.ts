@@ -1,4 +1,7 @@
-export const usdt = {
+import type { CrosschainTokenConf } from "../../../types/v1";
+import type { StatemintContext } from "../../chains/statemint";
+
+export const usdt: CrosschainTokenConf<StatemintContext> = {
   token: "usdt",
   isNative: false,
   isFeeToken: true,

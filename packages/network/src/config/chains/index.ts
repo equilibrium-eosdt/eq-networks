@@ -1,5 +1,5 @@
-import { genshiro } from "./genshiro";
-import { statemint } from "./statemint";
+import genshiro from "./genshiro";
+import statemint from "./statemint";
 
 export default {
   genshiro,

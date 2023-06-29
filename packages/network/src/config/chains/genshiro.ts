@@ -1,17 +1,14 @@
-import type { SubstrateChain } from "../../types/v1";
+import type { DefaultContext, SubstrateChain } from "../../types/v1";
 import type { BigDecimals } from "../../util/math";
 
-const chainDef: SubstrateChain = {
-  name: "genshiro",
-  title: "Genshiro",
-  nativeToken: "gens",
-  type: "substrate",
-  logo: "https://contentv2.equilibrium.io/uploads/gens_1f06723045.svg",
-  nodes: ["wss://node.ksm.genshiro.io"],
-  withdraw: "eq-bridge",
-};
+export interface GenshiroContext extends DefaultContext {
+  prices?: Record<string, number>;
+  asset?: number;
+  decimals?: number;
+  resourceId?: string;
+}
 
-const getBalance = (pub: `0x${string}`) =>
+const getBalance = (context?: GenshiroContext, pub?: `0x${string}`) =>
   ({
     section: "system",
     method: "account",
@@ -20,7 +17,7 @@ const getBalance = (pub: `0x${string}`) =>
 
 const getNativeBalance = getBalance;
 
-const parseBalance = (data: any, context?: Record<string, any>) => {
+const parseBalance = (context?: GenshiroContext, data?: any) => {
   const { decimals, asset } = context ?? {};
   const balances = data?.data?.isV0 ? data.data.asV0.balance : undefined;
 
@@ -30,18 +27,19 @@ const parseBalance = (data: any, context?: Record<string, any>) => {
         assetId.toString(10) === asset?.toString(10),
     ) ?? [];
 
-  return {
-    value: BigInt(
-      balance?.isPositive
-        ? balance.asPositive?.toString?.(10)
-        : `-${balance.asNegative?.toString?.(10)}` ?? 0,
-    ),
+  const sign = balance?.isPositive ? "" : "-";
 
+  const value =
+    sign +
+    ((sign ? balance?.asPositive : balance?.asNegative) ?? 0).toString?.(10);
+
+  return {
+    value: BigInt(value),
     decimals,
   } as BigDecimals;
 };
 
-const parseNativeBalance = (data: any) => {
+const parseNativeBalance = (context?: GenshiroContext, data?: any) => {
   const { decimals, asset } = { decimals: 9, asset: 1734700659 };
   const balances = data?.data?.isV0 ? data.data.asV0.balance : undefined;
 
@@ -51,21 +49,22 @@ const parseNativeBalance = (data: any) => {
         assetId.toString(10) === asset?.toString(10),
     ) ?? [];
 
-  return {
-    value: BigInt(
-      balance?.isPositive
-        ? balance.asPositive?.toString?.(10)
-        : `-${balance.asNegative?.toString?.(10)}` ?? 0,
-    ),
+  const sign = balance?.isPositive ? "" : "-";
 
+  const value =
+    sign +
+    ((sign ? balance?.asPositive : balance?.asNegative) ?? 0).toString?.(10);
+
+  return {
+    value: BigInt(value),
     decimals,
   } as BigDecimals;
 };
 
 const getTransferArgs = (
-  amount: `${number}`,
-  pub: `0x${string}`,
-  context?: Record<string, any>,
+  context?: GenshiroContext,
+  amount?: `${number}`,
+  pub?: `0x${string}`,
 ) => {
   return {
     section: "eqBridge",
@@ -85,7 +84,15 @@ const fns = {
   getTransferArgs,
 } as const;
 
-export const genshiro = {
-  ...chainDef,
+const chainDef: SubstrateChain = {
+  name: "genshiro",
+  title: "Genshiro",
+  nativeToken: "gens",
+  type: "substrate",
+  logo: "https://contentv2.equilibrium.io/uploads/gens_1f06723045.svg",
+  nodes: ["wss://node.ksm.genshiro.io"],
+  withdraw: "eq-bridge",
   ...fns,
 };
+
+export default chainDef;
