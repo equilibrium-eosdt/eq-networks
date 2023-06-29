@@ -1,7 +1,14 @@
 import type { DefaultContext, SubstrateChain } from "../../types/v1";
 import type { BigDecimals } from "../../util/math";
 
-const getBalance = (context?: DefaultContext, pub?: `0x${string}`) =>
+export interface GenshiroContext extends DefaultContext {
+  prices?: Record<string, number>;
+  asset?: number;
+  decimals?: number;
+  resourceId?: string;
+}
+
+const getBalance = (context?: GenshiroContext, pub?: `0x${string}`) =>
   ({
     section: "system",
     method: "account",
@@ -10,7 +17,7 @@ const getBalance = (context?: DefaultContext, pub?: `0x${string}`) =>
 
 const getNativeBalance = getBalance;
 
-const parseBalance = (context?: Record<string, any>, data?: any) => {
+const parseBalance = (context?: GenshiroContext, data?: any) => {
   const { decimals, asset } = context ?? {};
   const balances = data?.data?.isV0 ? data.data.asV0.balance : undefined;
 
@@ -32,7 +39,7 @@ const parseBalance = (context?: Record<string, any>, data?: any) => {
   } as BigDecimals;
 };
 
-const parseNativeBalance = (context?: DefaultContext, data?: any) => {
+const parseNativeBalance = (context?: GenshiroContext, data?: any) => {
   const { decimals, asset } = { decimals: 9, asset: 1734700659 };
   const balances = data?.data?.isV0 ? data.data.asV0.balance : undefined;
 
@@ -55,7 +62,7 @@ const parseNativeBalance = (context?: DefaultContext, data?: any) => {
 };
 
 const getTransferArgs = (
-  context?: Record<string, any>,
+  context?: GenshiroContext,
   amount?: `${number}`,
   pub?: `0x${string}`,
 ) => {

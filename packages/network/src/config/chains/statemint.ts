@@ -1,28 +1,35 @@
 import type { DefaultContext, SubstrateChain } from "../../types/v1";
 import type { BigDecimals } from "../../util/math";
 
-const getBalance = (context?: DefaultContext, pub?: `0x${string}`) =>
+export interface StatemintContext extends DefaultContext {
+  prices?: Record<string, number>;
+  asset?: number;
+  decimals?: number;
+  resourceId?: string;
+}
+
+const getBalance = (context?: StatemintContext, pub?: `0x${string}`) =>
   ({
     section: "assets",
     method: "account",
     args: [context?.asset, pub],
   } as const);
 
-const getNativeBalance = (context?: DefaultContext, pub?: `0x${string}`) =>
+const getNativeBalance = (context?: StatemintContext, pub?: `0x${string}`) =>
   ({
     section: "system",
     method: "account",
     args: [pub],
   } as const);
 
-const parseBalance = (context?: DefaultContext, data?: any) => {
+const parseBalance = (context?: StatemintContext, data?: any) => {
   return {
     value: BigInt(data?.balance?.toString?.(10) ?? 0),
     decimals: context?.decimals,
   } as BigDecimals;
 };
 
-const parseNativeBalance = (context?: DefaultContext, data?: any) => {
+const parseNativeBalance = (context?: StatemintContext, data?: any) => {
   return {
     value: BigInt(data?.data?.free?.toString?.(10) ?? 0),
     decimals: 10,
@@ -30,7 +37,7 @@ const parseNativeBalance = (context?: DefaultContext, data?: any) => {
 };
 
 const getTransferArgs = (
-  context?: DefaultContext,
+  context?: StatemintContext,
   amount?: `${number}`,
   pub?: `0x${string}`,
 ) => {

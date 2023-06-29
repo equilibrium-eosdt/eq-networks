@@ -1,4 +1,7 @@
-export const eqd = {
+import type { CrosschainTokenConf } from "../../../types/v1";
+import type { GenshiroContext } from "../../chains/genshiro";
+
+export const eqd: CrosschainTokenConf<GenshiroContext> = {
   token: "eqd",
   isNative: false,
   isFeeToken: false,
@@ -20,7 +23,7 @@ export const eqd = {
   ],
 };
 
-export const xdot = {
+export const xdot: CrosschainTokenConf<GenshiroContext> = {
   token: "xdot",
   isNative: false,
   isFeeToken: false,
@@ -42,7 +45,7 @@ export const xdot = {
   ],
 };
 
-export const xdot2 = {
+export const xdot2: CrosschainTokenConf<GenshiroContext> = {
   token: "xdot2",
   isNative: false,
   isFeeToken: false,
@@ -64,7 +67,7 @@ export const xdot2 = {
   ],
 };
 
-export const xdot3 = {
+export const xdot3: CrosschainTokenConf<GenshiroContext> = {
   token: "xdot3",
   isNative: false,
   isFeeToken: false,

@@ -12,19 +12,32 @@ interface BaseChain<T extends ChainType> {
     logo?: string | null;
 }
 export type DefaultContext = Record<string, any>;
-type Parser<T extends {} = any, C extends DefaultContext = DefaultContext> = (context?: C, data?: T) => BigDecimals;
-type Getter<A extends any[], T extends {} = any, C extends DefaultContext = DefaultContext> = (context?: C, ...args: A) => T;
-export interface SubstrateChain extends BaseChain<"substrate"> {
+type Parser<C extends DefaultContext = DefaultContext, T extends {} = any> = (context?: C, data?: T) => BigDecimals;
+type Getter<A extends any[], C extends DefaultContext = DefaultContext, T extends {} = any> = (context?: C, ...args: A) => T;
+export interface SubstrateChain<C extends DefaultContext = DefaultContext> extends BaseChain<"substrate"> {
     nodes: string[];
     paraId?: number;
     withdraw?: SubstrateWithdrawType;
-    getBalance: Getter<[`0x${string}`]>;
-    getNativeBalance: Getter<[`0x${string}`]>;
-    getTransferArgs: Getter<[`${number}`, `0x${string}`]>;
-    parseBalance: Parser;
-    parseNativeBalance: Parser;
+    getBalance: Getter<[`0x${string}`], C>;
+    getNativeBalance: Getter<[`0x${string}`, C]>;
+    getTransferArgs: Getter<[`${number}`, `0x${string}`, C]>;
+    parseBalance: Parser<C>;
+    parseNativeBalance: Parser<C>;
 }
 export interface EVMChain extends BaseChain<"evm"> {
+}
+export interface CrosschainTokenConf<C extends DefaultContext = DefaultContext> {
+    token: string;
+    context?: C;
+    isNative?: boolean;
+    isFeeToken?: boolean;
+    fees?: {
+        amount: number;
+        convert?: boolean;
+        name: string;
+        token: string;
+    }[];
+    existentialDeposit?: number;
 }
 /** @deprecated still hacks */
 export interface TypeMap {
