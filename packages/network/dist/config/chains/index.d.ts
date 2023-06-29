@@ -13,8 +13,8 @@ declare const _default: {
         };
         parseNativeBalance: (data: any, context?: Record<string, any> | undefined) => import("../../util/math").BigDecimals;
         getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any> | undefined) => {
-            readonly section: "polkadotXcm";
-            readonly method: "limitedReserveTransferAssets";
+            readonly section: "eqBridge";
+            readonly method: "transferNative";
             readonly args: readonly [`${number}`, `0x${string}`, 7, any];
         };
         nodes: string[];
