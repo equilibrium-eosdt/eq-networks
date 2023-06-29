@@ -1,31 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.statemint = void 0;
-const getBalance = (pub, context) => ({
+const getBalance = (context, pub) => ({
     section: "assets",
     method: "account",
     args: [context === null || context === void 0 ? void 0 : context.asset, pub],
 });
-const getNativeBalance = (pub) => ({
+const getNativeBalance = (context, pub) => ({
     section: "system",
     method: "account",
     args: [pub],
 });
-const parseBalance = (data, context) => {
+const parseBalance = (context, data) => {
     var _a, _b, _c;
     return {
         value: BigInt((_c = (_b = (_a = data === null || data === void 0 ? void 0 : data.balance) === null || _a === void 0 ? void 0 : _a.toString) === null || _b === void 0 ? void 0 : _b.call(_a, 10)) !== null && _c !== void 0 ? _c : 0),
         decimals: context === null || context === void 0 ? void 0 : context.decimals,
     };
 };
-const parseNativeBalance = (data, options) => {
+const parseNativeBalance = (context, data) => {
     var _a, _b, _c, _d;
     return {
         value: BigInt((_d = (_c = (_b = (_a = data === null || data === void 0 ? void 0 : data.data) === null || _a === void 0 ? void 0 : _a.free) === null || _b === void 0 ? void 0 : _b.toString) === null || _c === void 0 ? void 0 : _c.call(_b, 10)) !== null && _d !== void 0 ? _d : 0),
         decimals: 10,
     };
 };
-const getTransferArgs = (amount, pub, context) => {
+const getTransferArgs = (context, amount, pub) => {
     return {
         section: "polkadotXcm",
         method: "limitedReserveTransferAssets",
@@ -76,18 +75,9 @@ const fns = {
     // transfer
     getTransferArgs,
 };
-const chainDef = {
-    name: "statemint",
-    title: "Statemint",
-    nativeToken: "dot",
-    type: "substrate",
-    logo: null,
-    withdraw: "parachain",
-    nodes: [
+const chainDef = Object.assign({ name: "statemint", title: "Statemint", nativeToken: "dot", type: "substrate", logo: null, withdraw: "parachain", nodes: [
         "wss://statemint-rpc.polkadot.io",
         "wss://statemint.api.onfinality.io/public-ws",
         "wss://statemint-rpc.dwellir.com;wss://public-rpc.pinknode.io/statemint;wss://statemint.public.curie.radiumblock.co/ws",
-    ],
-    paraId: 1000,
-};
-exports.statemint = Object.assign(Object.assign({}, chainDef), fns);
+    ], paraId: 1000 }, fns);
+exports.default = chainDef;

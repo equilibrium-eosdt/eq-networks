@@ -1,28 +1,28 @@
-import type { SubstrateChain } from "../../types/v1";
+import type { DefaultContext, SubstrateChain } from "../../types/v1";
 import type { BigDecimals } from "../../util/math";
 
-const getBalance = (pub: `0x${string}`, context?: Record<string, any>) =>
+const getBalance = (context?: DefaultContext, pub?: `0x${string}`) =>
   ({
     section: "assets",
     method: "account",
     args: [context?.asset, pub],
   } as const);
 
-const getNativeBalance = (pub: `0x${string}`) =>
+const getNativeBalance = (context?: DefaultContext, pub?: `0x${string}`) =>
   ({
     section: "system",
     method: "account",
     args: [pub],
   } as const);
 
-const parseBalance = (data: any, context?: Record<string, any>) => {
+const parseBalance = (context?: DefaultContext, data?: any) => {
   return {
     value: BigInt(data?.balance?.toString?.(10) ?? 0),
     decimals: context?.decimals,
   } as BigDecimals;
 };
 
-const parseNativeBalance = (data: any, options?: Record<string, any>) => {
+const parseNativeBalance = (context?: DefaultContext, data?: any) => {
   return {
     value: BigInt(data?.data?.free?.toString?.(10) ?? 0),
     decimals: 10,
@@ -30,9 +30,9 @@ const parseNativeBalance = (data: any, options?: Record<string, any>) => {
 };
 
 const getTransferArgs = (
-  amount: `${number}`,
-  pub: `0x${string}`,
-  context?: Record<string, any>,
+  context?: DefaultContext,
+  amount?: `${number}`,
+  pub?: `0x${string}`,
 ) => {
   return {
     section: "polkadotXcm",
@@ -101,9 +101,7 @@ const chainDef: SubstrateChain = {
   ],
 
   paraId: 1000,
-};
-
-export const statemint = {
-  ...chainDef,
   ...fns,
 };
+
+export default chainDef;
