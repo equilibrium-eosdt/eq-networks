@@ -21,6 +21,7 @@ export const eqd: CrosschainTokenConf<GenshiroContext> = {
       token: "gens",
     },
   ],
+  withdraw: "eq-bridge",
 };
 
 export const xdot: CrosschainTokenConf<GenshiroContext> = {

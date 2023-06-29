@@ -20,6 +20,7 @@ exports.eqd = {
             token: "gens",
         },
     ],
+    withdraw: "eq-bridge",
 };
 exports.xdot = {
     token: "xdot",

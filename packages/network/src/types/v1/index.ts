@@ -11,6 +11,10 @@ export type SubstrateWithdrawType =
   | "parachain-evm"
   | "eq-bridge";
 
+export type SubstrateWithdrawFeePayer =
+  | "ThisAccWillPay"
+  | "SovereignAccWillPay";
+
 interface BaseChain<T extends ChainType> {
   type: T;
   name: string;
@@ -36,7 +40,6 @@ export interface SubstrateChain<C extends DefaultContext = DefaultContext>
   extends BaseChain<"substrate"> {
   nodes: string[];
   paraId?: number;
-  withdraw?: SubstrateWithdrawType;
   getBalance: Getter<[`0x${string}`], C>;
   getNativeBalance: Getter<[`0x${string}`], C>;
   getTransferArgs: Getter<[`${number}`, `0x${string}`], C>;
@@ -55,6 +58,9 @@ export interface CrosschainTokenConf<
   isFeeToken?: boolean;
   fees?: { amount: number; convert?: boolean; name: string; token: string }[];
   existentialDeposit?: number;
+  withdraw?: SubstrateWithdrawType;
+  withdrawFeePayer?: SubstrateWithdrawFeePayer;
+  withdrawFee?: number;
 }
 
 /** @deprecated still hacks */
