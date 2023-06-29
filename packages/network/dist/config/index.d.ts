@@ -13,7 +13,7 @@ declare const _default: {
                 readonly method: "account";
                 readonly args: readonly [`0x${string}`];
             };
-            parseNativeBalance: (data: any, context?: Record<string, any> | undefined) => import("../util/math").BigDecimals;
+            parseNativeBalance: (data: any) => import("../util/math").BigDecimals;
             getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any> | undefined) => {
                 readonly section: "eqBridge";
                 readonly method: "transferNative";

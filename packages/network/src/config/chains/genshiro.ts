@@ -6,7 +6,7 @@ const chainDef: SubstrateChain = {
   title: "Genshiro",
   nativeToken: "gens",
   type: "substrate",
-  logo: null,
+  logo: "https://contentv2.equilibrium.io/uploads/gens_1f06723045.svg",
   nodes: ["wss://node.ksm.genshiro.io"],
 };
 
@@ -40,7 +40,26 @@ const parseBalance = (data: any, context?: Record<string, any>) => {
   } as BigDecimals;
 };
 
-const parseNativeBalance = parseBalance;
+const parseNativeBalance = (data: any) => {
+  const { decimals, asset } = { decimals: 9, asset: 1734700659 };
+  const balances = data?.data?.isV0 ? data.data.asV0.balance : undefined;
+
+  const [, balance] =
+    balances?.find(
+      ([assetId]: [{ toString: (radix?: number) => `${number}` }]) =>
+        assetId.toString(10) === asset?.toString(10),
+    ) ?? [];
+
+  return {
+    value: BigInt(
+      balance?.isPositive
+        ? balance.asPositive?.toString?.(10)
+        : `-${balance.asNegative?.toString?.(10)}` ?? 0,
+    ),
+
+    decimals,
+  } as BigDecimals;
+};
 
 const getTransferArgs = (
   amount: `${number}`,

@@ -11,6 +11,30 @@ const typed_1 = require("../util/typed");
 console.info("checking serialize -> deserialize consistency");
 const BALANCE_METHOD = "getBalance";
 const BALANCE_ARGS = ["0x00"];
+const serializeBigIntToString = (a) => {
+    if (typeof a !== "bigint") {
+        return a;
+    }
+    return a.toString();
+};
+const MOCK = {
+    genshiro: {
+        parseNativeBalance: [
+            {
+                data: {
+                    isV0: true,
+                    asV0: {
+                        balance: [
+                            [1734700659, { isPositive: true, asPositive: 10000000000 }],
+                            [6648164, { isPositive: true, asPositive: 10000000 }],
+                        ],
+                    },
+                },
+            },
+            { value: BigInt(10000000000), decimals: 9 },
+        ],
+    },
+};
 (0, assert_1.default)((0, typed_1.getEntries)(config_1.default.tokens.crosschain).every(([chainName, tokens]) => {
     const chain = config_1.default.chains[chainName];
     const serialized = JSON.stringify(chain, (_, v) => {
@@ -28,8 +52,17 @@ const BALANCE_ARGS = ["0x00"];
     return (0, typed_1.getEntries)(tokens).every(([tokenName, token]) => {
         const { context } = token;
         console.info(`chain ${chainName}, token ${tokenName}, context: ${JSON.stringify(context)}`);
-        return [{ method: BALANCE_METHOD, args: BALANCE_ARGS }].every(({ method, args }) => {
-            assert_1.default.deepStrictEqual(chain[method](...args, context), deserialized[method](...args, context), `chain[${method}](...${JSON.stringify(args)}) !== deserialized[${method}](...${JSON.stringify(args)})`);
+        return [
+            { method: BALANCE_METHOD, args: BALANCE_ARGS },
+            ...(chainName in MOCK
+                ? (0, typed_1.getEntries)(MOCK[chainName]).map(([method, args]) => {
+                    return { method, args };
+                })
+                : []),
+        ].every(({ method, args }) => {
+            assert_1.default.deepStrictEqual(chain[method](
+            // @ts-ignore
+            ...args, context), deserialized[method](...args, context), `chain[${method}](...${JSON.stringify(args, serializeBigIntToString)}) !== deserialized[${method}](...${JSON.stringify(args, serializeBigIntToString)})`);
             return true;
         });
     });
