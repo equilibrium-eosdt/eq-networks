@@ -1,4 +1,8 @@
 export const isNumStr = (numStr?: string): numStr is `${number}` => {
+  if (!numStr?.length) {
+    return false;
+  }
+
   const num = Number(numStr);
   return Number.isFinite(num);
 };

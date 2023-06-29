@@ -3,12 +3,21 @@ import type crosschain from "../../config/tokens/crosschain";
 export const _NOT_IMPLEMENTED = true;
 
 export type ChainType = "substrate" | "evm";
-export interface ChainConfig<T extends ChainType> {
+
+interface BaseChain<T extends ChainType> {
   type: T;
-  types: string[];
-  args: unknown[];
-  callIndex: string;
+  name: string;
+  title: string;
+  nativeToken: string;
+  logo?: string | null;
 }
+
+export interface SubstrateChain extends BaseChain<"substrate"> {
+  nodes: string[];
+  paraId?: number;
+}
+
+export interface EVMChain extends BaseChain<"evm"> {}
 
 /** @deprecated still hacks */
 export interface TypeMap {
