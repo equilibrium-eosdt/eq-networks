@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hasKey = exports.is0x = exports.isNumStr = void 0;
 const isNumStr = (numStr) => {
+    if (!(numStr === null || numStr === void 0 ? void 0 : numStr.length)) {
+        return false;
+    }
     const num = Number(numStr);
     return Number.isFinite(num);
 };

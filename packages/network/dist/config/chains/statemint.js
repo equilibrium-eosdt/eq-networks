@@ -48,7 +48,10 @@ const getTransferArgs = (amount, pub, context) => {
                             Concrete: {
                                 parents: 0,
                                 interior: {
-                                    X2: [{ PalletInstance: 50 }, { GeneralIndex: 1984 }],
+                                    X2: [
+                                        { PalletInstance: 50 },
+                                        { GeneralIndex: context === null || context === void 0 ? void 0 : context.asset },
+                                    ],
                                 },
                             },
                         },
@@ -63,11 +66,7 @@ const getTransferArgs = (amount, pub, context) => {
         ],
     };
 };
-exports.statemint = {
-    name: "statemint",
-    title: "Statemint",
-    nativeToken: "dot",
-    type: "substrate",
+const fns = {
     // balances
     getBalance,
     parseBalance,
@@ -76,11 +75,18 @@ exports.statemint = {
     parseNativeBalance,
     // transfer
     getTransferArgs,
+};
+const chainDef = {
+    name: "statemint",
+    title: "Statemint",
+    nativeToken: "dot",
+    type: "substrate",
+    logo: null,
     nodes: [
         "wss://statemint-rpc.polkadot.io",
         "wss://statemint.api.onfinality.io/public-ws",
         "wss://statemint-rpc.dwellir.com;wss://public-rpc.pinknode.io/statemint;wss://statemint.public.curie.radiumblock.co/ws",
     ],
     paraId: 1000,
-    logo: null,
 };
+exports.statemint = Object.assign(Object.assign({}, chainDef), fns);

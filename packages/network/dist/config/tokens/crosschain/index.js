@@ -23,7 +23,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const genshiro = __importStar(require("./genshiro"));
 const statemint = __importStar(require("./statemint"));
 exports.default = {
+    genshiro,
     statemint,
 };
