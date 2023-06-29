@@ -19,8 +19,8 @@ export interface SubstrateChain<C extends DefaultContext = DefaultContext> exten
     paraId?: number;
     withdraw?: SubstrateWithdrawType;
     getBalance: Getter<[`0x${string}`], C>;
-    getNativeBalance: Getter<[`0x${string}`, C]>;
-    getTransferArgs: Getter<[`${number}`, `0x${string}`, C]>;
+    getNativeBalance: Getter<[`0x${string}`], C>;
+    getTransferArgs: Getter<[`${number}`, `0x${string}`], C>;
     parseBalance: Parser<C>;
     parseNativeBalance: Parser<C>;
 }
