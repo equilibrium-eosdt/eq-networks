@@ -11,7 +11,7 @@ export declare const genshiro: {
         readonly method: "account";
         readonly args: readonly [`0x${string}`];
     };
-    parseNativeBalance: (data: any, context?: Record<string, any>) => BigDecimals;
+    parseNativeBalance: (data: any) => BigDecimals;
     getTransferArgs: (amount: `${number}`, pub: `0x${string}`, context?: Record<string, any>) => {
         readonly section: "eqBridge";
         readonly method: "transferNative";
