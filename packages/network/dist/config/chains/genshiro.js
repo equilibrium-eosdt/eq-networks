@@ -13,7 +13,7 @@ const parseBalance = (context, data) => {
     const [, balance] = (_b = balances === null || balances === void 0 ? void 0 : balances.find(([assetId]) => assetId.toString(10) === (asset === null || asset === void 0 ? void 0 : asset.toString(10)))) !== null && _b !== void 0 ? _b : [];
     const sign = (balance === null || balance === void 0 ? void 0 : balance.isPositive) ? "" : "-";
     const value = sign +
-        ((_e = (_d = ((_c = (sign ? balance === null || balance === void 0 ? void 0 : balance.asPositive : balance === null || balance === void 0 ? void 0 : balance.asNegative)) !== null && _c !== void 0 ? _c : 0)).toString) === null || _e === void 0 ? void 0 : _e.call(_d, 10));
+        ((_e = (_d = ((_c = (!sign ? balance === null || balance === void 0 ? void 0 : balance.asPositive : balance === null || balance === void 0 ? void 0 : balance.asNegative)) !== null && _c !== void 0 ? _c : 0)).toString) === null || _e === void 0 ? void 0 : _e.call(_d, 10));
     return {
         value: BigInt(value),
         decimals,
@@ -26,7 +26,7 @@ const parseNativeBalance = (context, data) => {
     const [, balance] = (_b = balances === null || balances === void 0 ? void 0 : balances.find(([assetId]) => assetId.toString(10) === (asset === null || asset === void 0 ? void 0 : asset.toString(10)))) !== null && _b !== void 0 ? _b : [];
     const sign = (balance === null || balance === void 0 ? void 0 : balance.isPositive) ? "" : "-";
     const value = sign +
-        ((_e = (_d = ((_c = (sign ? balance === null || balance === void 0 ? void 0 : balance.asPositive : balance === null || balance === void 0 ? void 0 : balance.asNegative)) !== null && _c !== void 0 ? _c : 0)).toString) === null || _e === void 0 ? void 0 : _e.call(_d, 10));
+        ((_e = (_d = ((_c = (!sign ? balance === null || balance === void 0 ? void 0 : balance.asPositive : balance === null || balance === void 0 ? void 0 : balance.asNegative)) !== null && _c !== void 0 ? _c : 0)).toString) === null || _e === void 0 ? void 0 : _e.call(_d, 10));
     return {
         value: BigInt(value),
         decimals,

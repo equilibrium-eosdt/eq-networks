@@ -31,7 +31,7 @@ const parseBalance = (context?: GenshiroContext, data?: any) => {
 
   const value =
     sign +
-    ((sign ? balance?.asPositive : balance?.asNegative) ?? 0).toString?.(10);
+    ((!sign ? balance?.asPositive : balance?.asNegative) ?? 0).toString?.(10);
 
   return {
     value: BigInt(value),
@@ -53,7 +53,7 @@ const parseNativeBalance = (context?: GenshiroContext, data?: any) => {
 
   const value =
     sign +
-    ((sign ? balance?.asPositive : balance?.asNegative) ?? 0).toString?.(10);
+    ((!sign ? balance?.asPositive : balance?.asNegative) ?? 0).toString?.(10);
 
   return {
     value: BigInt(value),
