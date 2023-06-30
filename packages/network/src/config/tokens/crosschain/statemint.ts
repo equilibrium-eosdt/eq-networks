@@ -18,4 +18,6 @@ export const usdt: CrosschainTokenConf<StatemintContext> = {
     },
   ],
   existentialDeposit: 0.7,
+  withdraw: "parachain",
+  withdrawFee: 0.7,
 };

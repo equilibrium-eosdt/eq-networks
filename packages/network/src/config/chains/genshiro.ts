@@ -91,7 +91,6 @@ const chainDef: SubstrateChain = {
   type: "substrate",
   logo: "https://contentv2.equilibrium.io/uploads/gens_1f06723045.svg",
   nodes: ["wss://node.ksm.genshiro.io"],
-  withdraw: "eq-bridge",
   ...fns,
 };
 

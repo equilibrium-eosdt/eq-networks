@@ -75,7 +75,7 @@ const fns = {
     // transfer
     getTransferArgs,
 };
-const chainDef = Object.assign({ name: "statemint", title: "Statemint", nativeToken: "dot", type: "substrate", logo: null, withdraw: "parachain", nodes: [
+const chainDef = Object.assign({ name: "statemint", title: "Statemint", nativeToken: "dot", type: "substrate", logo: null, nodes: [
         "wss://statemint-rpc.polkadot.io",
         "wss://statemint.api.onfinality.io/public-ws",
         "wss://statemint-rpc.dwellir.com;wss://public-rpc.pinknode.io/statemint;wss://statemint.public.curie.radiumblock.co/ws",

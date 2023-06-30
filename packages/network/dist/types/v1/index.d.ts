@@ -4,6 +4,7 @@ import type { BigDecimals } from "../../util/math";
 export declare const _NOT_IMPLEMENTED = true;
 export type ChainType = "substrate" | "evm";
 export type SubstrateWithdrawType = "relay" | "parachain" | "parachain-evm" | "eq-bridge";
+export type SubstrateWithdrawFeePayer = "ThisAccWillPay" | "SovereignAccWillPay";
 interface BaseChain<T extends ChainType> {
     type: T;
     name: string;
@@ -17,7 +18,6 @@ type Getter<A extends any[], C extends DefaultContext = DefaultContext, T extend
 export interface SubstrateChain<C extends DefaultContext = DefaultContext> extends BaseChain<"substrate"> {
     nodes: string[];
     paraId?: number;
-    withdraw?: SubstrateWithdrawType;
     getBalance: Getter<[`0x${string}`], C>;
     getNativeBalance: Getter<[`0x${string}`], C>;
     getTransferArgs: Getter<[`${number}`, `0x${string}`], C>;
@@ -38,6 +38,9 @@ export interface CrosschainTokenConf<C extends DefaultContext = DefaultContext> 
         token: string;
     }[];
     existentialDeposit?: number;
+    withdraw?: SubstrateWithdrawType;
+    withdrawFeePayer?: SubstrateWithdrawFeePayer;
+    withdrawFee?: number;
 }
 /** @deprecated still hacks */
 export interface TypeMap {
