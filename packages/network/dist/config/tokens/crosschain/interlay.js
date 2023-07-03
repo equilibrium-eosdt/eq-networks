@@ -18,7 +18,7 @@ exports.ibtc = {
         },
     ],
     withdraw: "parachain",
-    withdrawFee: 0.000188632,
+    withdrawFee: 0.00000062,
 };
 exports.intr = {
     token: "intr",
@@ -39,5 +39,5 @@ exports.intr = {
     ],
     existentialDeposit: 0.1,
     withdraw: "parachain",
-    withdrawFee: 0.0000062,
+    withdrawFee: 0.000188632,
 };
