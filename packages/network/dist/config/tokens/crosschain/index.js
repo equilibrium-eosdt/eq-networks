@@ -23,9 +23,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const astar = __importStar(require("./astar"));
 const genshiro = __importStar(require("./genshiro"));
+const interlay = __importStar(require("./interlay"));
 const statemint = __importStar(require("./statemint"));
 exports.default = {
+    astar,
     genshiro,
+    interlay,
     statemint,
 };

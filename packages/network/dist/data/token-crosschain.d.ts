@@ -160,31 +160,6 @@ declare const response: {
             readonly depositSenderMinBalance: null;
         };
     }, {
-        readonly id: 7;
-        readonly attributes: {
-            readonly chainId: "10021";
-            readonly token: "gens";
-            readonly chainType: "evm";
-            readonly chainName: "rinkeby-eq-devnet";
-            readonly isNative: false;
-            readonly params: {
-                readonly contract: "0xC61E9fC7684EF6273bc2F8bfdf63802713bD6bFb";
-            };
-            readonly decimals: null;
-            readonly isDisabled: null;
-            readonly createdAt: "2022-10-26T13:32:17.290Z";
-            readonly updatedAt: "2022-10-26T13:32:17.290Z";
-            readonly isDepositEnabled: null;
-            readonly isWithdrawEnabled: null;
-            readonly withdrawXcmType: null;
-            readonly minDeposit: null;
-            readonly depositFeeUsd: null;
-            readonly withdrawFee: null;
-            readonly employeeOnly: null;
-            readonly paysFee: null;
-            readonly depositSenderMinBalance: null;
-        };
-    }, {
         readonly id: 8;
         readonly attributes: {
             readonly chainId: "10034";
@@ -275,31 +250,6 @@ declare const response: {
             readonly isDisabled: null;
             readonly createdAt: "2022-10-26T13:32:18.982Z";
             readonly updatedAt: "2022-10-26T13:32:18.982Z";
-            readonly isDepositEnabled: null;
-            readonly isWithdrawEnabled: null;
-            readonly withdrawXcmType: null;
-            readonly minDeposit: null;
-            readonly depositFeeUsd: null;
-            readonly withdrawFee: null;
-            readonly employeeOnly: null;
-            readonly paysFee: null;
-            readonly depositSenderMinBalance: null;
-        };
-    }, {
-        readonly id: 12;
-        readonly attributes: {
-            readonly chainId: "10021";
-            readonly token: "gens";
-            readonly chainType: "substrate";
-            readonly chainName: "genshiro-devnet";
-            readonly isNative: true;
-            readonly params: {
-                readonly nativeChainId: 1;
-            };
-            readonly decimals: 9;
-            readonly isDisabled: null;
-            readonly createdAt: "2022-10-26T13:32:19.403Z";
-            readonly updatedAt: "2022-10-26T13:32:19.403Z";
             readonly isDepositEnabled: null;
             readonly isWithdrawEnabled: null;
             readonly withdrawXcmType: null;

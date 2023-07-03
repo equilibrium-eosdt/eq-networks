@@ -5,5 +5,5 @@ export interface StatemintContext extends DefaultContext {
     decimals?: number;
     resourceId?: string;
 }
-declare const chainDef: SubstrateChain;
+declare const chainDef: SubstrateChain<StatemintContext>;
 export default chainDef;

@@ -84,7 +84,7 @@ const fns = {
   getTransferArgs,
 } as const;
 
-const chainDef: SubstrateChain = {
+const chainDef: SubstrateChain<GenshiroContext> = {
   name: "genshiro",
   title: "Genshiro",
   nativeToken: "gens",
