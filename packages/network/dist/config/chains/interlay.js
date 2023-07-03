@@ -44,12 +44,12 @@ const chainDef = {
             context === null || context === void 0 ? void 0 : context.currency,
             amount,
             {
-                V2: {
+                V3: {
                     parents: 1,
                     interior: {
                         X2: [
                             { Parachain: 2011 },
-                            { AccountId32: { id: pub, network: "Any" } },
+                            { AccountId32: { id: pub, network: null } },
                         ],
                     },
                 },
