@@ -5,5 +5,5 @@ export interface GenshiroContext extends DefaultContext {
     decimals?: number;
     resourceId?: string;
 }
-declare const chainDef: SubstrateChain;
+declare const chainDef: SubstrateChain<GenshiroContext>;
 export default chainDef;

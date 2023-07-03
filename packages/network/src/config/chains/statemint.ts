@@ -93,7 +93,7 @@ const fns = {
   getTransferArgs,
 } as const;
 
-const chainDef: SubstrateChain = {
+const chainDef: SubstrateChain<StatemintContext> = {
   name: "statemint",
   title: "Statemint",
   nativeToken: "dot",
