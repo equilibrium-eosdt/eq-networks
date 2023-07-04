@@ -41,6 +41,7 @@ exports.xdot = {
             token: "gens",
         },
     ],
+    withdraw: "eq-bridge",
 };
 exports.xdot2 = {
     token: "xdot2",
@@ -61,6 +62,7 @@ exports.xdot2 = {
             token: "gens",
         },
     ],
+    withdraw: "eq-bridge",
 };
 exports.xdot3 = {
     token: "xdot3",
@@ -81,4 +83,5 @@ exports.xdot3 = {
             token: "gens",
         },
     ],
+    withdraw: "eq-bridge",
 };
