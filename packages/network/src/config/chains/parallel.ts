@@ -73,7 +73,7 @@ const chainDef: SubstrateChain<ParallelContext> = {
                     interior: {
                       X2: [
                         { PalletInstance: 6 },
-                        { GeneralKey: context?.assetId },
+                        { GeneralIndex: context?.assetId },
                       ],
                     },
                   }

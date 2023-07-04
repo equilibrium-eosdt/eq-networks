@@ -38,7 +38,9 @@ const chainDef = {
     },
     getTransferArgs: (context, amount, pub) => ({
         section: "polkadotXcm",
-        method: "reserveTransferAssets",
+        method: (context === null || context === void 0 ? void 0 : context.generalKey)
+            ? "reserveWithdrawAssets"
+            : "reserveTransferAssets",
         args: [
             {
                 V3: {
