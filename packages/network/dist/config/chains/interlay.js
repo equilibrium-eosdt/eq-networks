@@ -5,7 +5,7 @@ const chainDef = {
     title: "Interlay",
     nativeToken: "intr",
     type: "substrate",
-    paraId: 2023,
+    paraId: 2032,
     logo: "https://contentv2.equilibrium.io/uploads/intr_3a63fb417c.svg",
     nodes: ["wss://interlay.api.onfinality.io/public-ws"],
     getBalance: (context, pub) => ({

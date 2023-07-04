@@ -26,10 +26,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const astar = __importStar(require("./astar"));
 const genshiro = __importStar(require("./genshiro"));
 const interlay = __importStar(require("./interlay"));
+const parallel = __importStar(require("./parallel"));
 const statemint = __importStar(require("./statemint"));
 exports.default = {
     astar,
     genshiro,
     interlay,
+    parallel,
     statemint,
 };
