@@ -36,7 +36,7 @@ export const eqd: CrosschainTokenConf<AstarContext> = {
       data: "0x6571640000000000000000000000000000000000000000000000000000000000",
       length: 3,
     },
-    decimals: 18,
+    decimals: 9,
   },
 
   fees: [
