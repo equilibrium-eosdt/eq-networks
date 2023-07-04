@@ -44,6 +44,7 @@ export const xdot: CrosschainTokenConf<GenshiroContext> = {
       token: "gens",
     },
   ],
+  withdraw: "eq-bridge",
 };
 
 export const xdot2: CrosschainTokenConf<GenshiroContext> = {
@@ -66,6 +67,7 @@ export const xdot2: CrosschainTokenConf<GenshiroContext> = {
       token: "gens",
     },
   ],
+  withdraw: "eq-bridge",
 };
 
 export const xdot3: CrosschainTokenConf<GenshiroContext> = {
@@ -88,4 +90,5 @@ export const xdot3: CrosschainTokenConf<GenshiroContext> = {
       token: "gens",
     },
   ],
+  withdraw: "eq-bridge",
 };
