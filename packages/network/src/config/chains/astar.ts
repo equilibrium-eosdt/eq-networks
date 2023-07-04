@@ -44,7 +44,9 @@ const chainDef: SubstrateChain<AstarContext> = {
 
   getTransferArgs: (context, amount, pub) => ({
     section: "polkadotXcm",
-    method: "reserveTransferAssets",
+    method: context?.generalKey
+      ? "reserveWithdrawAssets"
+      : "reserveTransferAssets",
     args: [
       {
         V3: {

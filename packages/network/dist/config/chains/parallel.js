@@ -68,7 +68,7 @@ const chainDef = {
                                     interior: {
                                         X2: [
                                             { PalletInstance: 6 },
-                                            { GeneralKey: context === null || context === void 0 ? void 0 : context.assetId },
+                                            { GeneralIndex: context === null || context === void 0 ? void 0 : context.assetId },
                                         ],
                                     },
                                 }
