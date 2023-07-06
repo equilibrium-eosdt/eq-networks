@@ -77,6 +77,7 @@ export const para: CrosschainTokenConf<ParallelContext> = {
   isFeeToken: false,
 
   context: {
+    assetId: 1,
     decimals: 12,
   },
 
