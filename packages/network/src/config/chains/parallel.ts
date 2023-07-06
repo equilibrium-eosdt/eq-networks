@@ -39,56 +39,28 @@ const chainDef: SubstrateChain<ParallelContext> = {
   }),
 
   getTransferArgs: (context, amount, pub) => ({
-    section: "polkadotXcm",
-    method: "reserveTransferAssets",
+    section: "xTokens",
+    method: "transfer",
     args: [
+      context?.assetId,
+      amount,
       {
         V1: {
           parents: 1,
           interior: {
-            X1: { Parachain: 2011 },
-          },
-        },
-      },
-      {
-        V1: {
-          parents: 0,
-          interior: {
-            X1: {
-              AccountId32: {
-                id: pub,
-                network: "Any",
+            X2: [
+              { Parachain: 2011 },
+              {
+                AccountId32: {
+                  id: pub,
+                  network: "Any",
+                },
               },
-            },
+            ],
           },
         },
       },
-      {
-        V1: [
-          {
-            id: {
-              Concrete: context?.assetId
-                ? {
-                    parents: 0,
-                    interior: {
-                      X2: [
-                        { PalletInstance: 6 },
-                        { GeneralIndex: context?.assetId },
-                      ],
-                    },
-                  }
-                : {
-                    parents: 0,
-                    interior: "Here",
-                  },
-            },
-            fun: {
-              Fungible: amount,
-            },
-          },
-        ],
-      },
-      0,
+      { Unlimited: null },
     ],
   }),
 };

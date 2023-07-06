@@ -34,56 +34,28 @@ const chainDef = {
         });
     },
     getTransferArgs: (context, amount, pub) => ({
-        section: "polkadotXcm",
-        method: "reserveTransferAssets",
+        section: "xTokens",
+        method: "transfer",
         args: [
+            context === null || context === void 0 ? void 0 : context.assetId,
+            amount,
             {
                 V1: {
                     parents: 1,
                     interior: {
-                        X1: { Parachain: 2011 },
-                    },
-                },
-            },
-            {
-                V1: {
-                    parents: 0,
-                    interior: {
-                        X1: {
-                            AccountId32: {
-                                id: pub,
-                                network: "Any",
-                            },
-                        },
-                    },
-                },
-            },
-            {
-                V1: [
-                    {
-                        id: {
-                            Concrete: (context === null || context === void 0 ? void 0 : context.assetId)
-                                ? {
-                                    parents: 0,
-                                    interior: {
-                                        X2: [
-                                            { PalletInstance: 6 },
-                                            { GeneralIndex: context === null || context === void 0 ? void 0 : context.assetId },
-                                        ],
-                                    },
-                                }
-                                : {
-                                    parents: 0,
-                                    interior: "Here",
+                        X2: [
+                            { Parachain: 2011 },
+                            {
+                                AccountId32: {
+                                    id: pub,
+                                    network: "Any",
                                 },
-                        },
-                        fun: {
-                            Fungible: amount,
-                        },
+                            },
+                        ],
                     },
-                ],
+                },
             },
-            0,
+            { Unlimited: null },
         ],
     }),
 };

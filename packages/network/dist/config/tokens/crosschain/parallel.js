@@ -64,6 +64,7 @@ exports.para = {
     // fixme check isNative first
     isFeeToken: false,
     context: {
+        assetId: 1,
         decimals: 12,
     },
     fees: [
