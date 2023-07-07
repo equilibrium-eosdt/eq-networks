@@ -1065,7 +1065,7 @@ const response = {
         params: {
           token: "0xFffFFfFf8f6267e040D8a0638C576dfBa4F0F6D6",
           withdrawExtra: {
-            eth: "eq-withdraw-moonbeam-ethereum",
+            // eth: "eq-withdraw-moonbeam-ethereum",
             feePayer: "ThisAccWillPay",
             xcmFeeAsset: "eq",
             xcmFeeAmount: 2424242424,
@@ -1097,7 +1097,7 @@ const response = {
         params: {
           token: "0xFFffFfFF8cdA1707bAF23834d211B08726B1E499",
           withdrawExtra: {
-            eth: "eqd-withdraw-moonbeam-ethereum",
+            // eth: "eqd-withdraw-moonbeam-ethereum",
             feePayer: "ThisAccWillPay",
             xcmFeeAsset: "eqd",
             xcmFeeAmount: 100000000,
@@ -1118,7 +1118,7 @@ const response = {
         depositSenderMinBalance: 0,
       },
     },
-    {
+    /*{
       id: 65,
       attributes: {
         chainId: "10009",
@@ -1406,7 +1406,7 @@ const response = {
         paysFee: null,
         depositSenderMinBalance: null,
       },
-    },
+    },*/
     {
       id: 76,
       attributes: {
@@ -1435,7 +1435,7 @@ const response = {
         depositSenderMinBalance: 0,
       },
     },
-    {
+    /*{
       id: 77,
       attributes: {
         chainId: "10097",
@@ -1503,7 +1503,7 @@ const response = {
         paysFee: null,
         depositSenderMinBalance: null,
       },
-    },
+    },*/
   ],
   meta: { pagination: { page: 1, pageSize: 100, pageCount: 1, total: 72 } },
 } as const;
