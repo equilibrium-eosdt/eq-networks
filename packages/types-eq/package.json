@@ -16,7 +16,7 @@
     "typescript": "5.0.4"
   },
   "scripts": {
-    "clean:interfaces": "rm ./src/interfaces/*.ts && cp -r ./src/placeholder/* ./src/interfaces/",
+    "clean:interfaces": "rm ./src/interfaces/*.ts; cp -r ./src/placeholder/* ./src/interfaces/",
     "build": "yarn clean:interfaces && yarn generate && tsc --build",
     "generate:defs": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @equilab/types-eq/interfaces --input ./src/interfaces --endpoint wss://node.pol.equilibrium.io",
     "generate:meta": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @equilab/types-eq/interfaces --endpoint wss://node.pol.equilibrium.io --output ./src/interfaces",
