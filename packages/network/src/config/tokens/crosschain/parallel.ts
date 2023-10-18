@@ -94,3 +94,26 @@ export const para: CrosschainTokenConf<ParallelContext> = {
   withdrawFee: 1.1294943503,
   existentialDeposit: 0.1,
 };
+
+export const sdot: CrosschainTokenConf<ParallelContext> = {
+  token: "sdot",
+  isNative: false,
+  isFeeToken: false,
+
+  context: {
+    assetId: 1001,
+    decimals: 10,
+  },
+
+  fees: [
+    {
+      convert: true,
+      amount: 0.1,
+      name: "xcm",
+      token: "sdot",
+    },
+  ],
+
+  withdraw: "parachain",
+  withdrawFee: 0.003222687,
+};
