@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.para = exports.cd815 = exports.cd714 = exports.cd613 = void 0;
+exports.sdot = exports.para = exports.cd815 = exports.cd714 = exports.cd613 = void 0;
 exports.cd613 = {
     token: "cd613",
     isNative: false,
@@ -78,4 +78,23 @@ exports.para = {
     withdraw: "parachain",
     withdrawFee: 1.1294943503,
     existentialDeposit: 0.1,
+};
+exports.sdot = {
+    token: "sdot",
+    isNative: false,
+    isFeeToken: false,
+    context: {
+        assetId: 1001,
+        decimals: 10,
+    },
+    fees: [
+        {
+            convert: true,
+            amount: 0.1,
+            name: "xcm",
+            token: "sdot",
+        },
+    ],
+    withdraw: "parachain",
+    withdrawFee: 0.003222687,
 };
