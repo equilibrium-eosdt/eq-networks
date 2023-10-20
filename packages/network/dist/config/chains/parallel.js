@@ -40,7 +40,7 @@ const chainDef = {
             context === null || context === void 0 ? void 0 : context.assetId,
             amount,
             {
-                V1: {
+                V3: {
                     parents: 1,
                     interior: {
                         X2: [
@@ -48,7 +48,7 @@ const chainDef = {
                             {
                                 AccountId32: {
                                     id: pub,
-                                    network: "Any",
+                                    network: null,
                                 },
                             },
                         ],
