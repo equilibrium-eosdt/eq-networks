@@ -1,6 +1,7 @@
 import type { CrosschainTokenConf } from "../../../types/v1";
 import type { ParallelContext } from "../../chains/parallel";
 
+/*
 export const cd613: CrosschainTokenConf<ParallelContext> = {
   token: "cd613",
   isNative: false,
@@ -23,6 +24,7 @@ export const cd613: CrosschainTokenConf<ParallelContext> = {
   withdraw: "parachain",
   withdrawFee: 0.003222687,
 };
+*/
 
 export const cd714: CrosschainTokenConf<ParallelContext> = {
   token: "cd714",
