@@ -18,8 +18,8 @@
   "scripts": {
     "clean:interfaces": "rm ./src/interfaces/*.ts; cp -r ./src/placeholder/* ./src/interfaces/",
     "build": "yarn clean:interfaces && yarn generate && tsc --build",
-    "generate:defs": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @equilab/types-gens/interfaces --input ./src/interfaces --endpoint wss://node.ksm.genshiro.io",
-    "generate:meta": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @equilab/types-gens/interfaces --endpoint wss://node.ksm.genshiro.io --output ./src/interfaces",
+    "generate:defs": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @equilab/types-gens/interfaces --input ./src/interfaces --endpoint wss://testnet.equilab.io/gens/collator/node1/wss",
+    "generate:meta": "node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @equilab/types-gens/interfaces --endpoint wss://testnet.equilab.io/gens/collator/node1/wss --output ./src/interfaces",
     "generate": "yarn generate:defs && yarn generate:meta",
     "lint": "tsc --noEmit --pretty",
     "preversion": "yarn build",

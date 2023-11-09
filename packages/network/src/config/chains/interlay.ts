@@ -14,7 +14,11 @@ const chainDef: SubstrateChain<InterlayContext> = {
   type: "substrate",
   paraId: 2032,
   logo: "https://contentv2.equilibrium.io/uploads/intr_3a63fb417c.svg",
-  nodes: ["wss://interlay.api.onfinality.io/public-ws"],
+  nodes: [
+    "wss://api.interlay.io/parachain",
+    "wss://rpc-interlay.luckyfriday.io",
+    "wss://interlay-rpc.dwellir.com",
+  ],
 
   getBalance: (context, pub) => ({
     section: "tokens",
