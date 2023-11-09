@@ -37,58 +37,49 @@ const chainDef = {
         });
     },
     getTransferArgs: (context, amount, pub) => ({
-        section: "polkadotXcm",
-        method: (context === null || context === void 0 ? void 0 : context.generalKey)
-            ? "reserveWithdrawAssets"
-            : "reserveTransferAssets",
+        section: "xTokens",
+        method: "transferMultiasset",
         args: [
+            {
+                V3: {
+                    id: {
+                        Concrete: (context === null || context === void 0 ? void 0 : context.generalKey)
+                            ? {
+                                parents: 1,
+                                interior: {
+                                    X2: [
+                                        { Parachain: 2011 },
+                                        { GeneralKey: context === null || context === void 0 ? void 0 : context.generalKey },
+                                    ],
+                                },
+                            }
+                            : {
+                                parents: 0,
+                                interior: "Here",
+                            },
+                    },
+                    fun: {
+                        Fungible: amount,
+                    },
+                },
+            },
             {
                 V3: {
                     parents: 1,
                     interior: {
-                        X1: { Parachain: 2011 },
-                    },
-                },
-            },
-            {
-                V3: {
-                    parents: 0,
-                    interior: {
-                        X1: {
-                            AccountId32: {
-                                id: pub,
-                                network: null,
-                            },
-                        },
-                    },
-                },
-            },
-            {
-                V3: [
-                    {
-                        id: {
-                            Concrete: (context === null || context === void 0 ? void 0 : context.generalKey)
-                                ? {
-                                    parents: 1,
-                                    interior: {
-                                        X2: [
-                                            { Parachain: 2011 },
-                                            { GeneralKey: context === null || context === void 0 ? void 0 : context.generalKey },
-                                        ],
-                                    },
-                                }
-                                : {
-                                    parents: 0,
-                                    interior: "Here",
+                        X2: [
+                            { Parachain: 2011 },
+                            {
+                                AccountId32: {
+                                    id: pub,
+                                    network: null,
                                 },
-                        },
-                        fun: {
-                            Fungible: amount,
-                        },
+                            },
+                        ],
                     },
-                ],
+                },
             },
-            0,
+            { Unlimited: null },
         ],
     }),
 };

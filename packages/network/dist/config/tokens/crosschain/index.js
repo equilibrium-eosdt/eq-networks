@@ -23,13 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const acala = __importStar(require("./acala"));
 const astar = __importStar(require("./astar"));
+const bifrost = __importStar(require("./bifrost"));
 const genshiro = __importStar(require("./genshiro"));
 const interlay = __importStar(require("./interlay"));
 const parallel = __importStar(require("./parallel"));
 const statemint = __importStar(require("./statemint"));
 exports.default = {
+    acala,
     astar,
+    bifrost,
     genshiro,
     interlay,
     parallel,
