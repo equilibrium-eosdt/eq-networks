@@ -1,25 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.para = exports.cd815 = exports.cd714 = exports.cd613 = void 0;
-exports.cd613 = {
-    token: "cd613",
-    isNative: false,
-    isFeeToken: false,
-    context: {
-        assetId: 200060013,
-        decimals: 10,
+exports.sdot = exports.para = exports.cd815 = exports.cd714 = void 0;
+/*
+export const cd613: CrosschainTokenConf<ParallelContext> = {
+  token: "cd613",
+  isNative: false,
+  isFeeToken: false,
+
+  context: {
+    assetId: 200060013,
+    decimals: 10,
+  },
+
+  fees: [
+    {
+      convert: true,
+      amount: 0.1,
+      name: "xcm",
+      token: "cd613",
     },
-    fees: [
-        {
-            convert: true,
-            amount: 0.1,
-            name: "xcm",
-            token: "cd613",
-        },
-    ],
-    withdraw: "parachain",
-    withdrawFee: 0.003222687,
+  ],
+
+  withdraw: "parachain",
+  withdrawFee: 0.003222687,
 };
+*/
 exports.cd714 = {
     token: "cd714",
     isNative: false,
@@ -78,4 +83,23 @@ exports.para = {
     withdraw: "parachain",
     withdrawFee: 1.1294943503,
     existentialDeposit: 0.1,
+};
+exports.sdot = {
+    token: "sdot",
+    isNative: false,
+    isFeeToken: false,
+    context: {
+        assetId: 1001,
+        decimals: 10,
+    },
+    fees: [
+        {
+            convert: true,
+            amount: 0.1,
+            name: "xcm",
+            token: "sdot",
+        },
+    ],
+    withdraw: "parachain",
+    withdrawFee: 0.003222687,
 };

@@ -45,7 +45,7 @@ const chainDef: SubstrateChain<ParallelContext> = {
       context?.assetId,
       amount,
       {
-        V1: {
+        V3: {
           parents: 1,
           interior: {
             X2: [
@@ -53,7 +53,7 @@ const chainDef: SubstrateChain<ParallelContext> = {
               {
                 AccountId32: {
                   id: pub,
-                  network: "Any",
+                  network: null,
                 },
               },
             ],
