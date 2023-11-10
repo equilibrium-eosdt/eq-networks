@@ -8,6 +8,29 @@ interface TokenConfig {
   imageExt?: SupportedExtensions;
 }
 
+export const equilibrium: Record<string, Omit<TokenConfig, "name">> = {
+  ldot: {
+    displayName: "LDOT",
+    title: "Liquidity for Staked DOT",
+    imageExt: ".svg",
+  },
+  sdot: {
+    displayName: "SDOT",
+    title: "Parallel SDOT",
+    imageExt: ".svg",
+  },
+  tdot: {
+    displayName: "TDOT",
+    title: "Taiga Protocol",
+    imageExt: ".svg",
+  },
+  vdot: {
+    displayName: "VDOT",
+    title: "Bifrost vDOT",
+    imageExt: ".svg",
+  },
+};
+
 export const genshiro: Record<string, Omit<TokenConfig, "name">> = {
   gens: {
     displayName: "GENS",

@@ -1,5 +1,5 @@
 import type chains from "../../config/chains";
-import type crosschain from "../../config/tokens/crosschain";
+import type { crosschain, equilibrium, genshiro } from "../../config/tokens";
 import type { BigDecimals } from "../../util/math";
 export declare const _NOT_IMPLEMENTED = true;
 export type ChainType = "substrate" | "evm";
@@ -46,5 +46,7 @@ export interface CrosschainTokenConf<C extends DefaultContext = DefaultContext> 
 export interface TypeMap {
     chains: typeof chains;
     crosschain: typeof crosschain;
+    equilibrium: typeof equilibrium;
+    genshiro: typeof genshiro;
 }
 export {};

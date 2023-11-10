@@ -6,5 +6,6 @@ interface TokenConfig {
     title?: string;
     imageExt?: SupportedExtensions;
 }
+export declare const equilibrium: Record<string, Omit<TokenConfig, "name">>;
 export declare const genshiro: Record<string, Omit<TokenConfig, "name">>;
 export { crosschain };
