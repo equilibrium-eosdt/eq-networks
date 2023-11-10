@@ -7,7 +7,7 @@ import evmSmartContractResponse from "../data/evm-smart-contract";
 import substrateChainResponse from "../data/substrate-chain";
 import tokenCrosschainResponse from "../data/token-crosschain";
 import chains from "../config/chains";
-import { genshiro, crosschain } from "../config/tokens";
+import { genshiro, equilibrium, crosschain } from "../config/tokens";
 
 const template = (
   jsonStr: string,
@@ -41,7 +41,9 @@ const main = async () => {
           },
           v1: {
             chains,
+            equilibrium,
             crosschain,
+            genshiro,
           },
         },
         (_, v) => {
