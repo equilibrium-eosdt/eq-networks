@@ -44,7 +44,9 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         },
         v1: {
             chains: chains_1.default,
+            equilibrium: tokens_1.equilibrium,
             crosschain: tokens_1.crosschain,
+            genshiro: tokens_1.genshiro,
         },
     }, (_, v) => {
         if (typeof v === "function") {
