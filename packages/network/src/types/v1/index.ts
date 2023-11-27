@@ -21,6 +21,7 @@ interface BaseChain<T extends ChainType> {
   title: string;
   nativeToken: string;
   logo?: string | null;
+  paraId?: number;
 }
 
 export type DefaultContext = Record<string, any>;
@@ -39,7 +40,6 @@ type Getter<
 export interface SubstrateChain<C extends DefaultContext = DefaultContext>
   extends BaseChain<"substrate"> {
   nodes: string[];
-  paraId?: number;
   getBalance: Getter<[`0x${string}`], C>;
   getNativeBalance: Getter<[`0x${string}`], C>;
   getTransferArgs: Getter<[`${number}`, `0x${string}`], C>;
@@ -47,7 +47,10 @@ export interface SubstrateChain<C extends DefaultContext = DefaultContext>
   parseNativeBalance: Parser<C>;
 }
 
-export interface EVMChain extends BaseChain<"evm"> {}
+export interface EVMChain<T> extends BaseChain<"evm"> {
+  /** @deprecated fix evm definitions */
+  info: T;
+}
 
 export interface CrosschainTokenConf<
   C extends DefaultContext = DefaultContext,
