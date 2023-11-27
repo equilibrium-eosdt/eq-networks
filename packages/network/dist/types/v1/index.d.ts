@@ -11,20 +11,22 @@ interface BaseChain<T extends ChainType> {
     title: string;
     nativeToken: string;
     logo?: string | null;
+    paraId?: number;
 }
 export type DefaultContext = Record<string, any>;
 type Parser<C extends DefaultContext = DefaultContext, T extends {} = any> = (context?: C, data?: T) => BigDecimals;
 type Getter<A extends any[], C extends DefaultContext = DefaultContext, T extends {} = any> = (context?: C, ...args: A) => T;
 export interface SubstrateChain<C extends DefaultContext = DefaultContext> extends BaseChain<"substrate"> {
     nodes: string[];
-    paraId?: number;
     getBalance: Getter<[`0x${string}`], C>;
     getNativeBalance: Getter<[`0x${string}`], C>;
     getTransferArgs: Getter<[`${number}`, `0x${string}`], C>;
     parseBalance: Parser<C>;
     parseNativeBalance: Parser<C>;
 }
-export interface EVMChain extends BaseChain<"evm"> {
+export interface EVMChain<T> extends BaseChain<"evm"> {
+    /** @deprecated fix evm definitions */
+    info: T;
 }
 export interface CrosschainTokenConf<C extends DefaultContext = DefaultContext> {
     token: string;

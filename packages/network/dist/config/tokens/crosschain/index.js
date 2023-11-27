@@ -28,7 +28,9 @@ const astar = __importStar(require("./astar"));
 const bifrost = __importStar(require("./bifrost"));
 const genshiro = __importStar(require("./genshiro"));
 const interlay = __importStar(require("./interlay"));
+const moonbeam = __importStar(require("./moonbeam"));
 const parallel = __importStar(require("./parallel"));
+const polkadot = __importStar(require("./polkadot"));
 const statemint = __importStar(require("./statemint"));
 exports.default = {
     acala,
@@ -37,5 +39,7 @@ exports.default = {
     genshiro,
     interlay,
     parallel,
+    polkadot,
+    moonbeam,
     statemint,
 };
