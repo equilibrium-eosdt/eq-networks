@@ -46,7 +46,7 @@ export const cd714: CrosschainTokenConf<ParallelContext> = {
   ],
 
   withdraw: "parachain",
-  withdrawFee: 0.003222687,
+  withdrawFee: 0.004,
 };
 
 export const cd815: CrosschainTokenConf<ParallelContext> = {
@@ -69,7 +69,7 @@ export const cd815: CrosschainTokenConf<ParallelContext> = {
   ],
 
   withdraw: "parachain",
-  withdrawFee: 0.003222687,
+  withdrawFee: 0.004,
 };
 
 export const para: CrosschainTokenConf<ParallelContext> = {
@@ -117,5 +117,5 @@ export const sdot: CrosschainTokenConf<ParallelContext> = {
   ],
 
   withdraw: "parachain",
-  withdrawFee: 0.003222687,
+  withdrawFee: 0.004,
 };

@@ -18,7 +18,7 @@ exports.astr = {
         },
     ],
     withdraw: "parachain",
-    withdrawFee: 0.004662276,
+    withdrawFee: 1.1,
     existentialDeposit: 0.1,
 };
 exports.eqd = {

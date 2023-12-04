@@ -21,7 +21,7 @@ export const ibtc: CrosschainTokenConf<InterlayContext> = {
   ],
 
   withdraw: "parachain",
-  withdrawFee: 0.00000062,
+  withdrawFee: 0.0000007,
 };
 
 export const intr: CrosschainTokenConf<InterlayContext> = {
@@ -47,5 +47,5 @@ export const intr: CrosschainTokenConf<InterlayContext> = {
 
   existentialDeposit: 0.1,
   withdraw: "parachain",
-  withdrawFee: 0.000188632,
+  withdrawFee: 0.0002,
 };

@@ -16,5 +16,5 @@ exports.dot = {
     ],
     existentialDeposit: 1,
     withdraw: "relay",
-    withdrawFee: 0.003222687,
+    withdrawFee: 0.004,
 };
