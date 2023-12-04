@@ -43,7 +43,7 @@ export const eqd: CrosschainTokenConf = {
   ],
 
   withdraw: "parachain-evm",
-  withdrawFee: 2.5,
+  withdrawFee: 0.3,
 };
 
 export const eq: CrosschainTokenConf = {
@@ -65,5 +65,5 @@ export const eq: CrosschainTokenConf = {
   ],
 
   withdraw: "parachain-evm",
-  withdrawFee: 2.5,
+  withdrawFee: 100,
 };

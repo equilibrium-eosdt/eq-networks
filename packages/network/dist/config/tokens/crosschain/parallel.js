@@ -42,7 +42,7 @@ exports.cd714 = {
         },
     ],
     withdraw: "parachain",
-    withdrawFee: 0.003222687,
+    withdrawFee: 0.004,
 };
 exports.cd815 = {
     token: "cd815",
@@ -61,7 +61,7 @@ exports.cd815 = {
         },
     ],
     withdraw: "parachain",
-    withdrawFee: 0.003222687,
+    withdrawFee: 0.004,
 };
 exports.para = {
     token: "para",
@@ -101,5 +101,5 @@ exports.sdot = {
         },
     ],
     withdraw: "parachain",
-    withdrawFee: 0.003222687,
+    withdrawFee: 0.004,
 };
