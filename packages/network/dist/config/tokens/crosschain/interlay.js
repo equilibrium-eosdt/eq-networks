@@ -39,5 +39,5 @@ exports.intr = {
     ],
     existentialDeposit: 0.1,
     withdraw: "parachain",
-    withdrawFee: 0.0002,
+    withdrawFee: 0.002,
 };
