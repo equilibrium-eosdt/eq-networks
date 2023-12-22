@@ -7,6 +7,9 @@ export const eq: CrosschainTokenConf<EthereumContext> = {
   isFeeToken: false,
 
   context: {
+    isEth: true,
+    asset: 25969,
+    decimals: 18,
     chainId: 0,
     resourceId:
       "0x000000000000000000000000000000681f812b3d181df0437de3f3e9ba249400",
@@ -21,6 +24,6 @@ export const eq: CrosschainTokenConf<EthereumContext> = {
     },
   ],
 
-  withdraw: "parachain-evm",
-  withdrawFee: 100,
+  withdraw: "eq-bridge",
+  withdrawFee: 940000,
 };

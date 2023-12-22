@@ -1,6 +1,7 @@
 import * as acala from "./acala";
 import * as astar from "./astar";
 import * as bifrost from "./bifrost";
+import * as ethereum from "./ethereum";
 import * as genshiro from "./genshiro";
 import * as interlay from "./interlay";
 import * as moonbeam from "./moonbeam";
@@ -11,6 +12,7 @@ declare const _default: {
     readonly acala: typeof acala;
     readonly astar: typeof astar;
     readonly bifrost: typeof bifrost;
+    readonly ethereum: typeof ethereum;
     readonly genshiro: typeof genshiro;
     readonly interlay: typeof interlay;
     readonly parallel: typeof parallel;

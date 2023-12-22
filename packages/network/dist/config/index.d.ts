@@ -4,6 +4,17 @@ declare const _default: {
         readonly acala: import("../types/v1").SubstrateChain<import("./chains/acala").AcalaContext>;
         readonly astar: import("../types/v1").SubstrateChain<import("./chains/astar").AstarContext>;
         readonly bifrost: import("../types/v1").SubstrateChain<import("./chains/bifrost").BifrostContext>;
+        readonly ethereum: {
+            info: {
+                readonly nodes: readonly ["https://eth.llamarpc.com"];
+            };
+            type: "evm";
+            name: string;
+            title: string;
+            nativeToken: string;
+            logo?: string | null | undefined;
+            paraId?: number | undefined;
+        };
         readonly genshiro: import("../types/v1").SubstrateChain<import("./chains/genshiro").GenshiroContext>;
         readonly interlay: import("../types/v1").SubstrateChain<import("./chains/interlay").InterlayContext>;
         readonly moonbeam: {

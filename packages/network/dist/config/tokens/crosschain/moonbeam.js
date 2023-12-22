@@ -36,7 +36,7 @@ exports.eqd = {
         },
     ],
     withdraw: "parachain-evm",
-    withdrawFee: 0.3,
+    withdrawFee: 1.0,
 };
 exports.eq = {
     token: "eq",

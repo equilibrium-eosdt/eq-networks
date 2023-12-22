@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const acala = __importStar(require("./acala"));
 const astar = __importStar(require("./astar"));
 const bifrost = __importStar(require("./bifrost"));
+const ethereum = __importStar(require("./ethereum"));
 const genshiro = __importStar(require("./genshiro"));
 const interlay = __importStar(require("./interlay"));
 const moonbeam = __importStar(require("./moonbeam"));
@@ -36,6 +37,7 @@ exports.default = {
     acala,
     astar,
     bifrost,
+    ethereum,
     genshiro,
     interlay,
     parallel,

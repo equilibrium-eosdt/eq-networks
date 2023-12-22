@@ -1,6 +1,8 @@
 import { DefaultContext, EVMChain } from "../../types/v1";
 
 export interface EthereumContext extends DefaultContext {
+  /** @deprecated */
+  isEth?: boolean;
   prices?: Record<string, number>;
   asset?: number;
   decimals?: number;
