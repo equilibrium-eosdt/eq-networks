@@ -1,6 +1,7 @@
 import acala from "./acala";
 import astar from "./astar";
 import bifrost from "./bifrost";
+import ethereum from "./ethereum";
 import genshiro from "./genshiro";
 import interlay from "./interlay";
 import moonbeam from "./moonbeam";
@@ -12,6 +13,7 @@ export default {
   acala,
   astar,
   bifrost,
+  ethereum,
   genshiro,
   interlay,
   moonbeam,

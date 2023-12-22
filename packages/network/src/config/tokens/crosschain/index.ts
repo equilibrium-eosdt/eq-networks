@@ -1,6 +1,7 @@
 import * as acala from "./acala";
 import * as astar from "./astar";
 import * as bifrost from "./bifrost";
+import * as ethereum from "./ethereum";
 import * as genshiro from "./genshiro";
 import * as interlay from "./interlay";
 import * as moonbeam from "./moonbeam";
@@ -12,6 +13,7 @@ export default {
   acala,
   astar,
   bifrost,
+  ethereum,
   genshiro,
   interlay,
   parallel,
