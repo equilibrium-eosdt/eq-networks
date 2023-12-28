@@ -30,7 +30,7 @@ exports.gens = {
         asset: 1734700659,
         decimals: 9,
         prices: {
-            gens: 1,
+            gens: 0.0002475,
         },
         resourceId: "0x0000000000000000000000000000007a05c51f15d366ac77bc86672166836100",
     },
