@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.xdot3 = exports.xdot2 = exports.xdot = exports.eqd = void 0;
+exports.xdot3 = exports.xdot2 = exports.xdot = exports.gens = exports.eqd = void 0;
 exports.eqd = {
     token: "eqd",
     isNative: false,
@@ -12,6 +12,27 @@ exports.eqd = {
             gens: 0.000429,
         },
         resourceId: "0x000000000000000000000000000000074F3176C2CFBBC7BBA48D64535E071500",
+    },
+    fees: [
+        {
+            amount: 100,
+            name: "chainbridge",
+            token: "gens",
+        },
+    ],
+    withdraw: "eq-bridge",
+};
+exports.gens = {
+    token: "gens",
+    isNative: true,
+    isFeeToken: false,
+    context: {
+        asset: 1734700659,
+        decimals: 9,
+        prices: {
+            gens: 0.0002475,
+        },
+        resourceId: "0x0000000000000000000000000000007a05c51f15d366ac77bc86672166836100",
     },
     fees: [
         {

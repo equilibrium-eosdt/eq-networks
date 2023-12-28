@@ -24,6 +24,29 @@ export const eqd: CrosschainTokenConf<GenshiroContext> = {
   withdraw: "eq-bridge",
 };
 
+export const gens: CrosschainTokenConf<GenshiroContext> = {
+  token: "gens",
+  isNative: true,
+  isFeeToken: false,
+  context: {
+    asset: 1734700659,
+    decimals: 9,
+    prices: {
+      gens: 0.0002475,
+    },
+    resourceId:
+      "0x0000000000000000000000000000007a05c51f15d366ac77bc86672166836100",
+  },
+  fees: [
+    {
+      amount: 100,
+      name: "chainbridge",
+      token: "gens",
+    },
+  ],
+  withdraw: "eq-bridge",
+};
+
 export const xdot: CrosschainTokenConf<GenshiroContext> = {
   token: "xdot",
   isNative: false,
