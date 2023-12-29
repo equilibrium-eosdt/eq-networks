@@ -5,13 +5,76 @@ export interface EthereumContext extends DefaultContext {
   isEth?: boolean;
   prices?: Record<string, number>;
   asset?: number;
-  decimals?: number;
-  resourceId?: string;
+  decimals: number;
+  resourceId: `0x${string}`;
   chainId?: number;
+  address?: `0x${string}`;
+}
+
+function getTransferArgs(
+  context: EthereumContext,
+  amount: `0x${number}`,
+  pub: `0x${string}`,
+) {
+  const functionName = "deposit";
+  const _pub = pub.slice(2);
+  const { resourceId, decimals } = context;
+  const hostChainId = 7;
+  const [int, fra] = amount.split(".");
+  let _amount = BigInt(int ?? 0) * BigInt(10) ** BigInt(decimals);
+
+  if (fra?.length) {
+    const _fra = fra.slice(0, decimals);
+    const dec = decimals - _fra.length;
+
+    if (Number.isFinite(Number(_fra))) {
+      _amount += BigInt(_fra) * BigInt(10) ** BigInt(dec);
+    }
+  }
+
+  const payload: `0x${string}` = `0x${_amount.toString(16).padStart(64, "0")}${(
+    _pub.length / 2
+  )
+    .toString(16)
+    .padStart(64, "0")}${_pub}`;
+
+  return {
+    functionName,
+    args: [hostChainId, resourceId, payload],
+    value: BigInt(1000000000000000),
+  } as const;
 }
 
 const info = {
+  abi: [
+    {
+      inputs: [
+        {
+          internalType: "uint8",
+          name: "destinationChainID",
+          type: "uint8",
+        },
+        {
+          internalType: "bytes32",
+          name: "resourceID",
+          type: "bytes32",
+        },
+        {
+          internalType: "bytes",
+          name: "data",
+          type: "bytes",
+        },
+      ],
+      name: "deposit",
+      outputs: [],
+      stateMutability: "payable",
+      type: "function",
+    },
+  ],
+  address: "0x267c4d894db79a3023e266B84401e58f7434e1F1",
+  spender: "0xe2a1D7C0c2ED4d3937bd6f93d9aCeA7498232F2F",
   nodes: ["https://eth.llamarpc.com"],
+  getTransferArgs,
 } as const;
 
 const chainDef: EVMChain<typeof info> = {

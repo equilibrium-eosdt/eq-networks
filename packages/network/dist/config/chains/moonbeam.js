@@ -50,7 +50,38 @@ const info = {
     abi: xTokensTransferAbi,
     address: xTokensContractAddress,
     nodes: ["wss://wss.api.moonbeam.network"],
+    getTransferArgs,
 };
+function getTransferArgs(context, amount, pub) {
+    // Junction::AccountId32
+    const DESTINATION_ENUM_SELECTOR = "0x01";
+    // NetworkId::Any
+    const DESTINATION_NETWORK_ID = "00";
+    const getInterior = (pub) => [
+        "0x00000007db",
+        `${DESTINATION_ENUM_SELECTOR}${pub.slice(2)}${DESTINATION_NETWORK_ID}`, // AccountId32: { network: Any, id: pub}
+    ];
+    const functionName = "transfer";
+    const { address, decimals } = context;
+    const [int, fra] = amount.split(".");
+    let _amount = BigInt(int !== null && int !== void 0 ? int : 0) * BigInt(10) ** BigInt(decimals);
+    if (fra === null || fra === void 0 ? void 0 : fra.length) {
+        const _fra = fra.slice(0, decimals);
+        const dec = decimals - _fra.length;
+        if (Number.isFinite(Number(_fra))) {
+            _amount += BigInt(_fra) * BigInt(10) ** BigInt(dec);
+        }
+    }
+    return {
+        functionName,
+        args: [
+            address,
+            _amount,
+            { parents: 1, interior: getInterior(pub) },
+            BigInt(5000000),
+        ],
+    };
+}
 const chainDef = {
     name: "moonbeam",
     type: "evm",

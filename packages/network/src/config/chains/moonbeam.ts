@@ -54,10 +54,52 @@ const info = {
   abi: xTokensTransferAbi,
   address: xTokensContractAddress,
   nodes: ["wss://wss.api.moonbeam.network"],
+  getTransferArgs,
 } as const;
 
 export interface MoonbeamContext extends DefaultContext {
   address?: `0x${string}`;
+  decimals: number;
+}
+
+function getTransferArgs(
+  context: MoonbeamContext,
+  amount: `0x${number}`,
+  pub: `0x${string}`,
+) {
+  // Junction::AccountId32
+  const DESTINATION_ENUM_SELECTOR = "0x01";
+  // NetworkId::Any
+  const DESTINATION_NETWORK_ID = "00";
+
+  const getInterior = (pub: `0x${string}`): `0x${string}`[] => [
+    "0x00000007db", // Parachain: 2011
+    `${DESTINATION_ENUM_SELECTOR}${pub.slice(2)}${DESTINATION_NETWORK_ID}`, // AccountId32: { network: Any, id: pub}
+  ];
+
+  const functionName = "transfer";
+  const { address, decimals } = context;
+  const [int, fra] = amount.split(".");
+  let _amount = BigInt(int ?? 0) * BigInt(10) ** BigInt(decimals);
+
+  if (fra?.length) {
+    const _fra = fra.slice(0, decimals);
+    const dec = decimals - _fra.length;
+
+    if (Number.isFinite(Number(_fra))) {
+      _amount += BigInt(_fra) * BigInt(10) ** BigInt(dec);
+    }
+  }
+
+  return {
+    functionName,
+    args: [
+      address!,
+      _amount,
+      { parents: 1, interior: getInterior(pub) },
+      BigInt(5000000),
+    ],
+  } as const;
 }
 
 const chainDef: EVMChain<typeof info> = {
