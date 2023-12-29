@@ -24,13 +24,14 @@ export const glmr: CrosschainTokenConf<MoonbeamContext> = {
   withdrawFee: 1,
 };
 
-export const eqd: CrosschainTokenConf = {
+export const eqd: CrosschainTokenConf<MoonbeamContext> = {
   token: "eqd",
   isNative: false,
   isFeeToken: false,
 
   context: {
     address: "0xFFffFfFF8cdA1707bAF23834d211B08726B1E499",
+    decimals: 9,
   },
 
   fees: [
@@ -46,13 +47,14 @@ export const eqd: CrosschainTokenConf = {
   withdrawFee: 1.0,
 };
 
-export const eq: CrosschainTokenConf = {
+export const eq: CrosschainTokenConf<MoonbeamContext> = {
   token: "eq",
   isNative: false,
   isFeeToken: false,
 
   context: {
     address: "0xFffFFfFf8f6267e040D8a0638C576dfBa4F0F6D6",
+    decimals: 9,
   },
 
   fees: [
