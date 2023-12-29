@@ -26,6 +26,7 @@ exports.eqd = {
     isFeeToken: false,
     context: {
         address: "0xFFffFfFF8cdA1707bAF23834d211B08726B1E499",
+        decimals: 9,
     },
     fees: [
         {
@@ -44,6 +45,7 @@ exports.eq = {
     isFeeToken: false,
     context: {
         address: "0xFffFFfFf8f6267e040D8a0638C576dfBa4F0F6D6",
+        decimals: 9,
     },
     fees: [
         {

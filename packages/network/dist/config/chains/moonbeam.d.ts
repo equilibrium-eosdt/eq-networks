@@ -1,7 +1,15 @@
 import type { DefaultContext } from "../../types/v1";
 export interface MoonbeamContext extends DefaultContext {
     address?: `0x${string}`;
+    decimals: number;
 }
+declare function getTransferArgs(context: MoonbeamContext, amount: `0x${number}`, pub: `0x${string}`): {
+    readonly functionName: "transfer";
+    readonly args: readonly [`0x${string}`, bigint, {
+        readonly parents: 1;
+        readonly interior: `0x${string}`[];
+    }, bigint];
+};
 declare const _default: {
     info: {
         readonly abi: readonly [{
@@ -38,6 +46,7 @@ declare const _default: {
         }];
         readonly address: "0x0000000000000000000000000000000000000804";
         readonly nodes: readonly ["wss://wss.api.moonbeam.network"];
+        readonly getTransferArgs: typeof getTransferArgs;
     };
     type: "evm";
     name: string;
