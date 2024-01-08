@@ -5,7 +5,7 @@ const chainDef = {
     title: "Parallel",
     nativeToken: "para",
     type: "substrate",
-    nodes: ["wss://rpc.parallel.fi"],
+    nodes: ["wss://parallel-rpc.dwellir.com", "wss://rpc.parallel.fi"],
     logo: "https://contentv2.equilibrium.io/uploads/parallel_3b34b5d6_ee793f8b57.svg",
     paraId: 2012,
     getBalance: (context, pub) => ({
