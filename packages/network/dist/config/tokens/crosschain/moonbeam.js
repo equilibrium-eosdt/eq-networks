@@ -31,7 +31,7 @@ exports.eqd = {
     fees: [
         {
             convert: true,
-            amount: 0.1,
+            amount: 100,
             name: "xcm",
             token: "eq",
         },
@@ -50,7 +50,7 @@ exports.eq = {
     fees: [
         {
             convert: true,
-            amount: 0.1,
+            amount: 100,
             name: "xcm",
             token: "eq",
         },
