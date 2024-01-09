@@ -45,6 +45,7 @@ export const eqd: CrosschainTokenConf<MoonbeamContext> = {
 
   withdraw: "parachain-evm",
   withdrawFee: 100,
+  withdrawToken: "eq",
 };
 
 export const eq: CrosschainTokenConf<MoonbeamContext> = {
