@@ -31,13 +31,13 @@ exports.eqd = {
     fees: [
         {
             convert: true,
-            amount: 100,
+            amount: 0.1,
             name: "xcm",
-            token: "eq",
+            token: "eqd",
         },
     ],
     withdraw: "parachain-evm",
-    withdrawFee: 1.0,
+    withdrawFee: 100,
 };
 exports.eq = {
     token: "eq",
@@ -50,9 +50,9 @@ exports.eq = {
     fees: [
         {
             convert: true,
-            amount: 100,
+            amount: 0.1,
             name: "xcm",
-            token: "eq",
+            token: "eqd",
         },
     ],
     withdraw: "parachain-evm",
