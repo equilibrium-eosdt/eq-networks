@@ -1,6 +1,6 @@
 {
   "name": "@equilab/network",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "main": "./dist/index.js",
   "license": "none",
   "private": false,
