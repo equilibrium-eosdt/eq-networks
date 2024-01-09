@@ -39,7 +39,7 @@ export const eqd: CrosschainTokenConf<MoonbeamContext> = {
       convert: true,
       amount: 0.1,
       name: "xcm",
-      token: "eqd",
+      token: "eq",
     },
   ],
 
@@ -62,7 +62,7 @@ export const eq: CrosschainTokenConf<MoonbeamContext> = {
       convert: true,
       amount: 0.1,
       name: "xcm",
-      token: "eqd",
+      token: "eq",
     },
   ],
 
