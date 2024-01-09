@@ -37,7 +37,7 @@ export const eqd: CrosschainTokenConf<MoonbeamContext> = {
   fees: [
     {
       convert: true,
-      amount: 0.1,
+      amount: 100,
       name: "xcm",
       token: "eq",
     },
@@ -60,7 +60,7 @@ export const eq: CrosschainTokenConf<MoonbeamContext> = {
   fees: [
     {
       convert: true,
-      amount: 0.1,
+      amount: 100,
       name: "xcm",
       token: "eq",
     },
