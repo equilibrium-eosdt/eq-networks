@@ -43,6 +43,7 @@ export interface CrosschainTokenConf<C extends DefaultContext = DefaultContext> 
     withdraw?: SubstrateWithdrawType;
     withdrawFeePayer?: SubstrateWithdrawFeePayer;
     withdrawFee?: number;
+    withdrawToken?: string;
 }
 /** @deprecated still hacks */
 export interface TypeMap {

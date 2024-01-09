@@ -64,6 +64,7 @@ export interface CrosschainTokenConf<
   withdraw?: SubstrateWithdrawType;
   withdrawFeePayer?: SubstrateWithdrawFeePayer;
   withdrawFee?: number;
+  withdrawToken?: string;
 }
 
 /** @deprecated still hacks */
